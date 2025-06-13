@@ -1,0 +1,57 @@
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #1e1e1e7d;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    color: #00ffcc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Footer container ichidagi elementlar */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Footer text */
+.footer .copyright {
+    font-size: 16px;
+    color: #00ffcc;
+}
+
+.footer h3 {
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #00ffcc;
+}
+
+/* Social media icons */
+.social_media {
+    display: flex;
+    gap: 20px;
+}
+
+.social_media a.ic {
+    color: #00ffcc;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.social_media a.ic:hover {
+    color: white;
+    transform: scale(1.2);
+    cursor: pointer;
+}

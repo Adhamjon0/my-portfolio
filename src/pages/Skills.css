@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.skills-section {
+    background-color: var(--secondary-bg-color, #121212);
+    color: var(--text-color, #00ffcc);
+    padding: 60px 20px;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skills-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--primary-color, #00ffcc);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    color: #00ffcc;
+}
+
+.skill-item {
+    text-align: left;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.skill-item label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #00ffcc;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Simple fade-in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,148 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+    background-color: #121212;
+    color: #00ffcc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header umumiy o'rab turuvchi */
+.header {
+    width: 100%;
+    background-color: rgba(30, 30, 30, 0.6);
+    padding: 20px 0;
+    animation: fadeInUp 0.8s ease forwards;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header konteyneri markazda */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+    font-size: 50px;
+    color: #00ffcc;
+}
+
+.logo__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Nav menyu */
+.header__nav .nav__list {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #00ffcc;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: white;
+}
+
+/* Contact buttonlar */
+.modes {
+    display: flex;
+    gap: 10px;
+}
+
+.mode {
+    padding: 8px 16px;
+    border: 1px solid #00ffcc;
+    background-color: transparent;
+    color: #00ffcc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode:hover {
+    background-color: #00ffcc;
+    color: #121212;
+    border-color: white;
+}
+
+
+/* Form layout */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form h1 {
+    text-align: center;
+    color: #00ffcc;
+    margin-bottom: 10px;
+}
+
+/* Inputlar */
+input {
+    padding: 12px;
+    border: 1px solid #00ffcc;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: white;
+}
+
+/* Send button */
+.send {
+    margin-top: 15px;
+    padding: 12px;
+    border: 1px solid #00ffcc;
+    background-color: transparent;
+    color: #00ffcc;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.send:hover {
+    background-color: #00ffcc;
+    color: #121212;
+    border-color: white;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

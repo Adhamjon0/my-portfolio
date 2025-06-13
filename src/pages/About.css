@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-container {
+    background-color: var(--secondary-bg-color, #121212);
+    color: var(--text-color, #00ffcc);
+    padding: 60px 20px;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-section {
+    flex: 1;
+    font-family: 'Segoe UI', sans-serif;
+    color: #00ffcc;
+}
+
+.about-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--primary-color, #00ffcc);
+    animation: fadeInUp 1s ease forwards;
+    text-align: center;
+}
+
+.about-text {
+    opacity: 0;
+    transform: translateY(20px);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Delay classes for animations */
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}
+
+.delay-4 {
+    animation-delay: 2s;
+}
+
+.delay-5 {
+    animation-delay: 2.5s;
+}
+
+
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Simple fade-in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

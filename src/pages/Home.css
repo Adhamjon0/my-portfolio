@@ -1,0 +1,135 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    background-color: #121212;
+    color: #00ffcc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page container */
+.home-container {
+    background-color: var(--secondary-bg-color, #121212);
+    padding: 60px 20px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Layout */
+.home-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Left column */
+.left {
+    flex: 1;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+/* Right column (image) */
+.right {
+    flex: 1;
+    text-align: center;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Typing effect */
+.typing-text {
+    font-size: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #00ffcc;
+    width: 0;
+    animation: typing 3s steps(30) forwards, blink 0.7s infinite;
+}
+
+/* Fade-in secondary text */
+.fade-in-text {
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 3s forwards;
+    margin-top: 20px;
+}
+
+/* Profile image animation */
+.profile-img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;  
+}
+
+/* Button style */
+.btn-cnt {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.btn-cnt a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+    margin: 0px;
+}
+
+.btn-cnt a:hover {
+    color:black;
+}
+
+/* Typing keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Fade in up keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Simple fade-in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
