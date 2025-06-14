@@ -30,7 +30,7 @@ export default function Contact() {
         const message = e.target.message.value;
 
         await sendToTelegram(name, email, subject, message);
-        alert('✅ Xabaringiz Telegramga yuborildi!');
+        alert('✅ Your message has been sent successfully!');
         e.target.reset();
     };
 
