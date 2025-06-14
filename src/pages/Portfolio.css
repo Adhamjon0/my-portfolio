@@ -3,3 +3,66 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.uzum-market {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+.uzum-market:hover {
+    transform: translateY(-5px);
+}
+
+.uzum_img {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.uzum_img:hover {
+    transform: scale(1.05);
+}
+
+.uzum-market a {
+    text-decoration: none;
+    color: #00ffcc;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.uzum-market a:hover {
+    color: #00c2a0;
+}
+
+/* Fade-up animatsiyasi */
+@keyframes fadeUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
