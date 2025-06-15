@@ -21,7 +21,7 @@ export default function Footer() {
                         <FaInstagram />
                     </a>
                     <a
-                        href="https://facebook.com/AdhamjonSodiqov"
+                        href="https://www.facebook.com/adhamjon.sodiqov.2025"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ic"
@@ -29,7 +29,7 @@ export default function Footer() {
                         <FaFacebook />
                     </a>
                     <a
-                        href="https://linkedin.com/in/AdhamjonSodiqov"
+                        href="https://www.linkedin.com/in/adhamjon-sodiqov-547371299/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ic"
@@ -37,7 +37,7 @@ export default function Footer() {
                         <FaLinkedin />
                     </a>
                     <a
-                        href="https://t.me/adhamjonsodqiov18"
+                        href="https://t.me/adhamjonsodiqov18"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ic"

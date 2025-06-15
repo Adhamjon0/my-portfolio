@@ -71,6 +71,7 @@
     .footer .copyright,
     .footer h3 {
         text-align: center;
+        font-size: 14px;
     }
 
     .social_media {
@@ -80,4 +81,6 @@
     .social_media a.ic {
         font-size: 30px;
     }
+
+    
 }
