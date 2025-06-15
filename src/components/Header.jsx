@@ -1,4 +1,3 @@
-/*************  ✨ Windsurf Command 🌟  *************/
 import "./Header.css"
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
@@ -61,5 +60,3 @@ export default function Header() {
         </div>
     )
 }
-
-/*******  e9729e3b-fa0c-4797-abff-a9fadde26f58  *******/

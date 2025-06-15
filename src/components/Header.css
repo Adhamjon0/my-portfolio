@@ -175,10 +175,6 @@ select option {
         padding: 10px 20px;
     }
 
-    .logo {
-        font-size: 36px;
-    }
-
     .nav__link {
         font-size: 18px;
     }
@@ -189,7 +185,7 @@ select option {
 
     .modal-icon {
         position: absolute;
-        top: 50px;
+        top: 45px;
         right: 20px;
     }
 
@@ -199,7 +195,7 @@ select option {
 
     .header-actions {
         position: absolute;
-        top: 50px;
+        top: 45px;
         right: 50px;
         width: 115px;
     }

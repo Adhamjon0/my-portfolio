@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import { FaFacebook, FaInstagram, FaLinkedin, FaTelegram } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin, FaTelegram, FaGithub } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
@@ -37,13 +37,23 @@ export default function Footer() {
                         <FaLinkedin />
                     </a>
                     <a
-                        href="https://t.me/adhamjonsodqiov"
+                        href="https://t.me/adhamjonsodqiov18"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ic"
                     >
                         <FaTelegram />
                     </a>
+                    
+                    {/* github link */}
+                    <a
+                        href="https://github.com/Adhamjon0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ic"
+                    >
+                        <FaGithub />
+                    </a>        
                 </div>
             </div>
         </div>

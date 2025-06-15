@@ -119,6 +119,13 @@ body {
         align-items: center;
     }
 
+    .home-container {
+        padding: 40px 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 390px;
+    }
+
     .left, .right {
         flex: none;
         width: 100%;
@@ -126,13 +133,14 @@ body {
     }
 
     .typing-text {
-        font-size: 35px;
-        width: 100%;
+        font-size: 30px;
         animation: typing 3s steps(30) forwards, blink 0.7s infinite;
     }
     .fade-in-text {
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 15px;
+        animation: fadeIn 2s ease-in 3s forwards;
+        width: 90%;
     }
     .profile-img {
         width: 250px;
