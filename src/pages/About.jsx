@@ -1,29 +1,22 @@
 import React from 'react';
 import './About.css';
 import img2 from "../pages/photos/its me.jpg";
+import { useTranslation } from 'react-i18next';
 
 export default function About() {
+    const { t } = useTranslation();
+
     return (
         <div className="about-container">
             <div className="about-content">
                 <section className="about-section">
-                    <h2 className="about-title">About Me</h2>
+                    <h2 className="about-title">{t("about.title")}</h2>
 
-                    <p className="about-text delay-1">
-                        I'm Sodiqov Adhamjon G'ayratovich — a frontend developer from Samarkand, Uzbekistan.
-                    </p>
-                    <p className="about-text delay-2">
-                        I was born in 2008 and began my journey with HTML, CSS, and JavaScript.
-                    </p>
-                    <p className="about-text delay-3">
-                        I'm currently learning React.js and focusing on creating clean, responsive UIs.
-                    </p>
-                    <p className="about-text delay-4">
-                        I care about code quality, performance, and user experience.
-                    </p>
-                    <p className="about-text delay-5">
-                        Every project I build brings me closer to becoming the developer I aspire to be.
-                    </p>
+                    <p className="about-text delay-1">{t("about.p1")}</p>
+                    <p className="about-text delay-2">{t("about.p2")}</p>
+                    <p className="about-text delay-3">{t("about.p3")}</p>
+                    <p className="about-text delay-4">{t("about.p4")}</p>
+                    <p className="about-text delay-5">{t("about.p5")}</p>
                 </section>
 
                 <div className="about-image">

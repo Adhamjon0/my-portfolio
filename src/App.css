@@ -3,3 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Default: Dark Mode */
+:root {
+    --background-color: #121212;
+    --text-color: #00ffcc;
+    --accent-color: #00ffcc;
+    --hover-color: white;
+    --input-bg: transparent;
+    --input-border: #00ffcc;
+}
+
+/* Light mode uchun */
+.light {
+    --background-color: #ffffff;
+    --text-color: #121212;
+    --accent-color: #007acc;
+    --hover-color: #000;
+    --input-bg: #fff;
+    --input-border: #007acc;
+}

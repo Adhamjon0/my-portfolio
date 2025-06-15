@@ -1,0 +1,46 @@
+{
+    "header": {
+        "about": "About me",
+        "portfolio": "My portfolio",
+        "skills": "My skills",
+        "contact": "Contact me"
+    },
+    "footer": {
+        "portfolio": "My portfolio. All rights reserved.",
+        "motivation": "Keep pushing forward. Your best is yet to come."
+    },
+    "about": {
+        "title": "About Me",
+        "p1": "I'm Sodiqov Adhamjon G'ayratovich — a frontend developer from Samarkand, Uzbekistan.",
+        "p2": "I was born in 2008 and began my journey with HTML, CSS, and JavaScript.",
+        "p3": "I'm currently learning React.js and focusing on creating clean, responsive UIs.",
+        "p4": "I care about code quality, performance, and user experience.",
+        "p5": "Every project I build brings me closer to becoming the developer I aspire to be."
+    },
+    "contact": {
+        "title": "Contact me",
+        "phone": "My phone number",
+        "telegram": "My telegram",
+        "email": "My email",
+        "address": "My address",
+        "fullName": "Full Name",
+        "phonePlaceholder": "Phone Number",
+        "emailPlaceholder": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send",
+        "alert": "✅ Your message has been sent successfully!"
+    },
+    "home": {
+        "greeting": "Hi, I'm Adhamjon 👋",
+        "description": "A Frontend Developer building modern and responsive web experiences.",
+        "contact": "Contact Me With Telegram"
+    },
+    "portfolio": {
+        "projects": "Projects",
+        "uzum": "Uzum Market"
+    },
+    "skills": {
+        "title": "My Skills"
+    }
+}

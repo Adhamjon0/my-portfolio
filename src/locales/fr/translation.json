@@ -1,0 +1,46 @@
+{
+    "header": {
+        "about": "À propos de moi",
+        "portfolio": "Mon portfolio",
+        "skills": "Mes compétences",
+        "contact": "Contactez-moi"
+    },
+    "footer": {
+        "portfolio": "Mon portfolio. Tous droits réservés.",
+        "motivation": "Continuez d’avancer. Le meilleur est à venir."
+    },
+    "about": {
+        "title": "À propos de moi",
+        "p1": "Je suis Sodiqov Adhamjon G'ayratovich — développeur frontend de Samarcande, Ouzbékistan.",
+        "p2": "Je suis né en 2008 et j'ai commencé mon parcours avec HTML, CSS et JavaScript.",
+        "p3": "Actuellement, j'apprends React.js et je me concentre sur des interfaces propres et réactives.",
+        "p4": "Je me soucie de la qualité du code, de la performance et de l'expérience utilisateur.",
+        "p5": "Chaque projet me rapproche du développeur que je souhaite devenir."
+    },
+    "contact": {
+        "title": "Contactez-moi",
+        "phone": "Mon numéro de téléphone",
+        "telegram": "Mon Telegram",
+        "email": "Mon e-mail",
+        "address": "Mon adresse",
+        "fullName": "Nom complet",
+        "phonePlaceholder": "Numéro de téléphone",
+        "emailPlaceholder": "E-mail",
+        "subject": "Sujet",
+        "message": "Message",
+        "send": "Envoyer",
+        "alert": "✅ Votre message a été envoyé avec succès !"
+    },
+    "home": {
+        "greeting": "Salut, je suis Adhamjon 👋",
+        "description": "Un développeur frontend créant des expériences web modernes et réactives.",
+        "contact": "Contactez-moi via Telegram"
+    },
+    "portfolio": {
+        "projects": "Projets",
+        "uzum": "Marché Uzum"
+    },
+    "skills": {
+        "title": "Mes compétences"
+    }
+}

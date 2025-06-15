@@ -1,0 +1,46 @@
+{
+    "header": {
+        "about": "Men haqimda",
+        "portfolio": "Mening portfoliom",
+        "skills": "Ko'nikmalarim",
+        "contact": "Bog‘lanish"
+    },
+    "footer": {
+        "portfolio": "Mening portfoliom. Barcha huquqlar himoyalangan.",
+        "motivation": "Oldinga intiling. Eng zo‘ri hali oldinda."
+    },
+    "about": {
+        "title": "Men haqimda",
+        "p1": "Men Sodiqov Adhamjon G'ayratovichman — Samarqanddan bo‘lgan frontend dasturchiman.",
+        "p2": "2008-yilda tug‘ilganman va HTML, CSS hamda JavaScript bilan yo‘limni boshlaganman.",
+        "p3": "Hozirda React.js o‘rganmoqdaman va toza, responsiv UI yaratishga e'tibor qaratmoqdaman.",
+        "p4": "Kod sifati, ishlash tezligi va foydalanuvchi tajribasi men uchun muhim.",
+        "p5": "Har bir loyiham meni orzu qilgan dasturchiga yaqinlashtiradi."
+    },
+    "contact": {
+        "title": "Menga bog‘laning",
+        "phone": "Mening telefon raqamim",
+        "telegram": "Mening telegramim",
+        "email": "Mening elektron pochtam",
+        "address": "Manzilim",
+        "fullName": "To‘liq ismingiz",
+        "phonePlaceholder": "Telefon raqamingiz",
+        "emailPlaceholder": "Email manzilingiz",
+        "subject": "Mavzu",
+        "message": "Xabar",
+        "send": "Yuborish",
+        "alert": "✅ Xabaringiz muvaffaqiyatli yuborildi!"
+    },
+    "home": {
+        "greeting": "Salom, men Adhamjon 👋",
+        "description": "Zamonaviy va moslashuvchan veb interfeyslar yaratadigan frontend dasturchi.",
+        "contact": "Telegram orqali bog‘laning"
+    },
+    "portfolio": {
+        "projects": "Loyihalar",
+        "uzum": "Uzum Market"
+    },
+    "skills": {
+        "title": "Ko'nikmalarim"
+    }
+}

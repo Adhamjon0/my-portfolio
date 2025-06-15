@@ -68,28 +68,6 @@ body {
     color: white;
 }
 
-/* Contact buttonlar */
-.modes {
-    display: flex;
-    gap: 10px;
-}
-
-.mode {
-    padding: 8px 16px;
-    border: 1px solid #00ffcc;
-    background-color: transparent;
-    color: #00ffcc;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.mode:hover {
-    background-color: #00ffcc;
-    color: #121212;
-    border-color: white;
-}
-
 
 /* Form layout */
 .form {
@@ -139,43 +117,37 @@ input:focus {
     border-color: white;
 }
 
-@media (max-width: 450px) {
-    .header__nav {
-        display: none;
-    }
-    .modal-icon {
-        display: block;
-        cursor: pointer;
-        color: #00ffcc;
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        transform: translateY(-50%);
-    }
-    .header__nav {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #1e1e1e;
-        transition: transform 0.4s ease-in-out;
-        z-index: 999;
+select {
+    padding: 12px;
+    border: 1px solid #00ffcc;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+    color: #00ffcc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    border-radius: 20px;
+
+    &:focus {
+        outline: none;
+        border-color: white;
     }
 
-    .nav__list {
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px 0;
-        align-items: center;
+    &:hover {
+        background-color: #00ffcc;
+        color: #121212;
+        border-color: white;
     }
+}
 
-    .header-container {
-        padding: 0 20px;
-    }
-
-    .logo {
-        font-size: 40px;
-    }
+select option {
+    background-color: #121212;
+    color: #00ffcc;
+    padding: 12px;
+    border: none;
 }
 
 
@@ -193,9 +165,3 @@ input:focus {
         transform: translateY(0);
     }
 }
-
-
-
-
-
-

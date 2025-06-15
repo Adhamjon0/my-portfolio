@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -7,15 +7,17 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
-import Intro from './components/Intro'; 
+import Intro from './components/Intro';
+import './i18n';
+import './App.css';
 
-export default function App() {
+function AppContent() {
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 5000); // 3 soniya
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,17 +27,26 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skill" element={<Skills />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
+    <div>
+      <BrowserRouter>
+        <Header />
 
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skill" element={<Skills />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <AppContent />
   );
 }

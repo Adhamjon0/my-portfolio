@@ -1,13 +1,16 @@
 import React from 'react'
 import "./Footer.css"
 import { FaFacebook, FaInstagram, FaLinkedin, FaTelegram } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
+    const { t } = useTranslation();
+
     return (
         <div className='footer'>
             <div className='footer-container'>
-                <p className="copyright">&copy; 2025 My portfolio. All rights reserved.</p>
-                <h3>Keep pushing forward. Your best is yet to come.</h3>
+                <p className="copyright">&copy; 2025 {t("footer.portfolio")}</p>
+                <h3>{t("footer.motivation")}</h3>
                 <div className="social_media">
                     <a
                         href="https://instagram.com/__sodiqov18"

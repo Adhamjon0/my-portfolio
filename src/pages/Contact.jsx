@@ -1,8 +1,9 @@
 import React from 'react'
 import './Contact.css'
-
+import { useTranslation } from 'react-i18next'
 
 export default function Contact() {
+    const { t } = useTranslation();
 
     const sendToTelegram = async (name, email, subject, message) => {
         const token = '7962235971:AAE0wF3vE3vMYOjKK2VK6kVc_1oMJL36sl4';
@@ -30,38 +31,38 @@ export default function Contact() {
         const message = e.target.message.value;
 
         await sendToTelegram(name, email, subject, message);
-        alert('✅ Your message has been sent successfully!');
+        alert(t('contact.alert'));
         e.target.reset();
     };
 
     return (
         <div className='contact-container'>
-            <h1>Contact me</h1>
+            <h1>{t('contact.title')}</h1>
             <div className='contact'>
                 <div className='cnt-left'>
                     <ul>
-                        <li>My phone number</li>
+                        <li>{t('contact.phone')}</li>
                         <p>+998 93 000 00 00</p>
 
-                        <li>My telegram</li>
+                        <li>{t('contact.telegram')}</li>
                         <p>@adhamjonsodiqov</p>
 
-                        <li>My email</li>
+                        <li>{t('contact.email')}</li>
                         <p>adhamjonsodiqov03@gmail.com</p>
 
-                        <li>My address</li>
+                        <li>{t('contact.address')}</li>
                         <p>Samarkand, Uzbekistan</p>
                     </ul>
                 </div>
 
                 <div className='cnt-right'>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" placeholder="Full Name" name="name" required />
-                        <input type="text" placeholder="Phone Number" name="phone" />
-                        <input type="email" placeholder="Email" name="email" required />
-                        <input type="text" placeholder="Subject" name="subject" required />
-                        <textarea placeholder="Message" name="message" required></textarea>
-                        <button type="submit">Send</button>
+                        <input type="text" placeholder={t('contact.fullName')} name="name" required />
+                        <input type="text" placeholder={t('contact.phonePlaceholder')} name="phone" />
+                        <input type="email" placeholder={t('contact.emailPlaceholder')} name="email" required />
+                        <input type="text" placeholder={t('contact.subject')} name="subject" required />
+                        <textarea placeholder={t('contact.message')} name="message" required></textarea>
+                        <button type="submit">{t('contact.send')}</button>
                     </form>
                 </div>
             </div>
