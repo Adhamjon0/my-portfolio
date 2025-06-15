@@ -73,29 +73,6 @@ body {
     animation: fadeInUp 1.5s ease forwards;  
 }
 
-/* Button style */
-.btn-cnt {
-    margin-top: 30px;
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid var(--primary-color);
-    border-radius: 50px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-
-.btn-cnt a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s;
-    margin: 0px;
-}
-
-.btn-cnt a:hover {
-    color:black;
-}
 
 /* Typing keyframes */
 @keyframes typing {
@@ -131,5 +108,30 @@ body {
 @keyframes fadeIn {
     to {
         opacity: 1;
+    }
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .home-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .right {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 350px;
+        margin-bottom: 150px;
+    }
+
+    .typing-text {
+        font-size: 40px;
     }
 }

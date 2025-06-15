@@ -15,11 +15,6 @@ export default function Home() {
                         <p className="fade-in-text">
                             {t('home.description')}
                         </p>
-                        <button className='btn-cnt'>
-                            <a href="https://t.me/@adhamjonsodiqov18" className="about-link delay-6">
-                                {t('home.contact')}
-                            </a>
-                        </button>
                     </div>
                 </div>
                 <div className="right">

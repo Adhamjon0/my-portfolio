@@ -13,17 +13,17 @@ body {
     overflow-x: hidden;
 }
 
-/* Header umumiy o'rab turuvchi */
+/* Header asosiy */
 .header {
     width: 100%;
     background-color: rgba(30, 30, 30, 0.6);
     padding: 20px 0;
     animation: fadeInUp 0.8s ease forwards;
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
-/* Header konteyneri markazda */
+/* Header container */
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -32,11 +32,6 @@ body {
     align-items: center;
     padding: 0 50px;
     flex-wrap: wrap;
-}
-
-.modal-icon {
-    display: none;
-    font-size: 50px;
 }
 
 /* Logo */
@@ -48,6 +43,14 @@ body {
 .logo__link {
     text-decoration: none;
     color: inherit;
+}
+
+/* Toggle icon (mobil menyu uchun) */
+.modal-icon {
+    display: none;
+    font-size: 32px;
+    color: #00ffcc;
+    cursor: pointer;
 }
 
 /* Nav menyu */
@@ -68,79 +71,28 @@ body {
     color: white;
 }
 
-
-/* Form layout */
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form h1 {
-    text-align: center;
-    color: #00ffcc;
-    margin-bottom: 10px;
-}
-
-/* Inputlar */
-input {
-    padding: 12px;
-    border: 1px solid #00ffcc;
-    background-color: transparent;
-    color: #ffffff;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-input:focus {
-    outline: none;
-    border-color: white;
-}
-
-/* Send button */
-.send {
-    margin-top: 15px;
-    padding: 12px;
-    border: 1px solid #00ffcc;
-    background-color: transparent;
-    color: #00ffcc;
-    border-radius: 50px;
-    cursor: pointer;
-    width: 100%;
-    transition: all 0.3s ease;
-}
-
-.send:hover {
-    background-color: #00ffcc;
-    color: #121212;
-    border-color: white;
-}
-
+/* Language select */
 select {
     padding: 12px;
     border: 1px solid #00ffcc;
     background-color: transparent;
-    border-radius: 8px;
+    border-radius: 20px;
     font-size: 16px;
     transition: 0.3s;
     color: #00ffcc;
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     cursor: pointer;
-    border-radius: 20px;
+}
 
-    &:focus {
-        outline: none;
-        border-color: white;
-    }
+select:focus {
+    outline: none;
+    border-color: white;
+}
 
-    &:hover {
-        background-color: #00ffcc;
-        color: #121212;
-        border-color: white;
-    }
+select:hover {
+    background-color: #00ffcc;
+    color: #121212;
+    border-color: white;
 }
 
 select option {
@@ -150,10 +102,7 @@ select option {
     border: none;
 }
 
-
-
-
-/* Fade in up animation */
+/* Fade in animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -164,4 +113,99 @@ select option {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* RESPONSIVE: < 768px */
+@media (max-width: 768px) {
+    .modal-icon {
+        display: block;
+    }
+
+    .header__nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(30, 30, 30, 0.95);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1000;
+    }
+
+    .header__nav.active {
+        display: flex;
+    }
+
+    .header__nav .nav__list {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nav__item {
+        width: 100%;
+    }
+
+    .nav__link {
+        display: block;
+        width: 100%;
+        font-size: 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-actions {
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 10px;
+    }
+
+    .header-actions select {
+        width: 100%;
+    }
+}
+
+/* RESPONSIVE: < 450px */
+@media (max-width: 450px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .nav__link {
+        font-size: 18px;
+    }
+
+    .header-actions select {
+        font-size: 14px;
+    }
+
+    .modal-icon {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+    }
+
+    .header__nav .nav__list {
+        width: 100%;
+    }
+
+    .header-actions {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 115px;
+    }
+
+    .logo__link {
+        font-size: 50px;
+    }
+
 }

@@ -9,7 +9,6 @@ export default function Portfolio() {
     return (
         <div>
             <div className='portfolio-container'>
-
                 <div className='uzum-market'>
                     <h1>{t('portfolio.projects')}</h1>
                     <img src={uzumMarket} className='uzum_img' alt="Uzum market" />

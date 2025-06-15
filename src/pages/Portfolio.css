@@ -66,3 +66,23 @@
         opacity: 1;
     }
 }
+
+/* media */
+@media (max-width: 768px) {
+    .uzum-market {
+        padding: 20px;
+    }
+
+    .uzum_img {
+        max-width: 70%;
+    }
+
+    .uzum-market a {
+        font-size: 22px;
+    }
+
+    .portfolio-container {
+        margin-bottom: 150px;
+        padding: 0 20px;
+    }
+}
