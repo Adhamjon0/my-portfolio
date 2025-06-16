@@ -32,7 +32,7 @@
         "alert": "✅ Xabaringiz muvaffaqiyatli yuborildi!"
     },
     "home": {
-        "greeting": "Salom, men Adhamjon 👋",
+        "greeting": "Salom, men Adhamjon",
         "description": "Zamonaviy va moslashuvchan veb interfeyslar yaratadigan frontend dasturchi.",
         "contact": "Telegram orqali bog‘laning"
     },

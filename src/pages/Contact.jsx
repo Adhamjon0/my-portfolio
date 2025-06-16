@@ -42,10 +42,7 @@ export default function Contact() {
                 <div className='cnt-left'>
                     <ul>
                         <li>{t('contact.phone')}</li>
-                        <p>+998 93 000 00 00</p>
-
-                        <li>{t('contact.telegram')}</li>
-                        <p>@adhamjonsodiqov</p>
+                        <p>+998 90 101 24 70</p>
 
                         <li>{t('contact.email')}</li>
                         <p>adhamjonsodiqov03@gmail.com</p>

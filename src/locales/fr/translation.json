@@ -32,7 +32,7 @@
         "alert": "✅ Votre message a été envoyé avec succès !"
     },
     "home": {
-        "greeting": "Salut, je suis Adhamjon 👋",
+        "greeting": "Salut, je suis Adhamjon",
         "description": "Un développeur frontend créant des expériences web modernes et réactives.",
         "contact": "Contactez-moi via Telegram"
     },
