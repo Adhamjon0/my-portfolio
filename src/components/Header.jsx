@@ -1,12 +1,15 @@
+// Header.jsx
 import "./Header.css"
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FiMenu } from "react-icons/fi"
 import { useState } from "react"
+import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
     const { t, i18n } = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     const handleChangeLang = (e) => {
         i18n.changeLanguage(e.target.value);
@@ -47,7 +50,7 @@ export default function Header() {
                     </ul>
                 </nav>
 
-                {/* Language select */}
+                {/* Language select + Theme toggle */}
                 <div className="header-actions">
                     <select name="lang" onChange={handleChangeLang} value={i18n.language}>
                         <option value="en">English</option>
@@ -55,6 +58,9 @@ export default function Header() {
                         <option value="uz">Uzbek</option>
                         <option value="ru">Russian</option>
                     </select>
+                    <button onClick={toggleTheme} style={{ marginLeft: '10px' }} className="theme-toggle"> 
+                        {theme === 'light' ? '🌞' : '🌙'}
+                    </button>
                 </div>
             </div>
         </div>

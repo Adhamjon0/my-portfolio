@@ -1,9 +1,11 @@
-import React from 'react'
-import './Contact.css'
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import './Contact.css';
+import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Contact() {
     const { t } = useTranslation();
+    const { theme } = useTheme();
 
     const sendToTelegram = async (name, email, subject, message) => {
         const token = '7962235971:AAE0wF3vE3vMYOjKK2VK6kVc_1oMJL36sl4';
@@ -36,8 +38,8 @@ export default function Contact() {
     };
 
     return (
-        <div className='contact-container'>
-            <h1>{t('contact.title')}</h1>
+        <div className={`contact-container ${theme}`}>
+            <h1 className="contact-title">{t('contact.title')}</h1>
             <div className='contact'>
                 <div className='cnt-left'>
                     <ul>

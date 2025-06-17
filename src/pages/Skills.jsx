@@ -22,7 +22,12 @@ export default function Skills() {
                     {skills.map((skill, index) => (
                         <div className="skill-item" key={index}>
                             <label>{skill.name}</label>
-                            <progress value={skill.value} max="100"></progress>
+                            <input
+                                type="range"
+                                value={skill.value}
+                                max="100"
+                                readOnly
+                            />
                         </div>
                     ))}
                 </div>

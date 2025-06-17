@@ -1,15 +1,28 @@
+/* Global reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Light mode */
+.about-container.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark mode */
+.about-container.dark {
+    background-color: #121212;
+    color: #00ffcc;
+}
+
+/* Main container */
 .about-container {
-    background-color: var(--secondary-bg-color, #121212);
-    color: var(--text-color, #00ffcc);
     padding: 60px 20px;
 }
 
+/* Content layout */
 .about-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -20,20 +33,22 @@
     gap: 40px;
 }
 
+/* Left section (text) */
 .about-section {
     flex: 1;
     font-family: 'Segoe UI', sans-serif;
-    color: #00ffcc;
 }
 
+/* Section title */
 .about-title {
     font-size: 36px;
     margin-bottom: 40px;
-    color: var(--primary-color, #00ffcc);
     animation: fadeInUp 1s ease forwards;
     text-align: center;
+    color: inherit;
 }
 
+/* Paragraphs */
 .about-text {
     opacity: 0;
     transform: translateY(20px);
@@ -43,7 +58,7 @@
     animation: fadeInUp 1s ease forwards;
 }
 
-/* Delay classes for animations */
+/* Delays for smooth fade in */
 .delay-1 {
     animation-delay: 0.5s;
 }
@@ -64,23 +79,23 @@
     animation-delay: 2.5s;
 }
 
-
-
+/* Right section (image) */
 .about-image {
     flex: 1;
     text-align: center;
 }
 
+/* Image styling */
 .profile-img {
     width: 300px;
     height: 400px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
-
+/* Fade in animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -93,9 +108,56 @@
     }
 }
 
-/* Simple fade-in */
 @keyframes fadeIn {
     to {
         opacity: 1;
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-section {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+
+    .about-title {
+        font-size: 30px;
+    }
+
+    .about-text {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .profile-img {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 425px) {
+    .about-container {
+        padding: 30px 10px;
+    }
+
+    .about-title {
+        font-size: 26px;
+    }
+
+    .about-text {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 300px;
     }
 }

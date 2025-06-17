@@ -19,7 +19,7 @@ body {
     animation: fadeInUp 1s ease forwards;
 }
 
-.contact-container h1 {
+.contact-title {
     text-align: center;
     font-size: 36px;
     margin-bottom: 40px;
@@ -105,6 +105,39 @@ button:hover {
     border-color: white;
 }
 
+/* Light mode styles */
+.contact-container.light {
+    background-color: #ffffff;
+    color: #121212;
+}
+.contact-container.light .contact-title {
+    color: #121212;
+}
+
+.contact-container.light .cnt-left li {
+    color: #121212;
+}
+.contact-container.light .cnt-left p {
+    color: #333333;
+}
+.contact-container.light input,
+.contact-container.light textarea {
+    background-color: #f3f3f3;
+    color: #121212;
+    border: 1px solid #ccc;
+}
+
+.contact-container.light button {
+    background-color: #121212;
+    color: #ffffff;
+    border-color: #121212;
+}
+
+.contact-container.light button:hover {
+    background-color: #333333;
+    border-color: #000000;
+}
+
 /* Fade in up animation */
 @keyframes fadeInUp {
     from {
@@ -131,5 +164,46 @@ button:hover {
         flex: none;
         width: 100%;
     }
-    
+}
+
+@media (max-width: 425px) {
+    .contact {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 150px;
+    }
+
+    .cnt-left,
+    .cnt-right {
+        flex: none;
+        width: 100%;
+    }
+
+    .cnt-left ul li {
+        font-size: 18px;
+    }
+
+    .cnt-left p {
+        font-size: 16px;
+    }
+
+    .cnt-right form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
 }

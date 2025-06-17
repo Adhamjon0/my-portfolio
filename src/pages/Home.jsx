@@ -1,13 +1,15 @@
-import React from 'react'
-import "./Home.css"
-import img from "../pages/photos/adam-bmw.jpg"
-import { useTranslation } from 'react-i18next'
+import React from 'react';
+import './Home.css';
+import img from '../pages/photos/adam-bmw.jpg';
+import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext'; // To‘g‘ri import
 
 export default function Home() {
     const { t } = useTranslation();
+    const { theme } = useTheme(); // ThemeContext o‘rniga
 
     return (
-        <div className="home-container">
+        <div className={`home-container ${theme}`}>
             <div className="home-page">
                 <div className="left">
                     <div className="hero-container">

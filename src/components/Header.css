@@ -1,19 +1,4 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body settings */
-body {
-    background-color: #121212;
-    color: #00ffcc;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
-}
-
-/* Header asosiy */
+/* HEADER */
 .header {
     width: 100%;
     background-color: rgba(30, 30, 30, 0.6);
@@ -23,7 +8,6 @@ body {
     z-index: 10;
 }
 
-/* Header container */
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -34,10 +18,9 @@ body {
     flex-wrap: wrap;
 }
 
-/* Logo */
 .logo {
     font-size: 50px;
-    color: #00ffcc;
+    color: var(--accent-color);
 }
 
 .logo__link {
@@ -45,15 +28,13 @@ body {
     color: inherit;
 }
 
-/* Toggle icon (mobil menyu uchun) */
 .modal-icon {
     display: none;
     font-size: 32px;
-    color: #00ffcc;
+    color: var(--accent-color);
     cursor: pointer;
 }
 
-/* Nav menyu */
 .header__nav .nav__list {
     display: flex;
     gap: 50px;
@@ -62,7 +43,7 @@ body {
 
 .nav__link {
     text-decoration: none;
-    color: #00ffcc;
+    color: var(--accent-color);
     font-size: 20px;
     transition: color 0.3s ease;
 }
@@ -71,15 +52,23 @@ body {
     color: white;
 }
 
-/* Language select */
+.theme-toggle {
+    border: 1px solid var(--accent-color);
+
+    &:hover {
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+    }
+}
+
 select {
     padding: 12px;
-    border: 1px solid #00ffcc;
+    border: 1px solid var(--accent-color);
     background-color: transparent;
     border-radius: 20px;
     font-size: 16px;
     transition: 0.3s;
-    color: #00ffcc;
+    color: var(--accent-color);
     appearance: none;
     cursor: pointer;
 }
@@ -90,19 +79,19 @@ select:focus {
 }
 
 select:hover {
-    background-color: #00ffcc;
-    color: #121212;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
     border-color: white;
 }
 
 select option {
-    background-color: #121212;
-    color: #00ffcc;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     padding: 12px;
     border: none;
 }
 
-/* Fade in animation */
+    
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -115,7 +104,6 @@ select option {
     }
 }
 
-/* RESPONSIVE: < 768px */
 @media (max-width: 768px) {
     .modal-icon {
         display: block;
@@ -131,7 +119,9 @@ select option {
         flex-direction: column;
         align-items: flex-start;
         z-index: 1000;
+        
     }
+    
 
     .header__nav.active {
         display: flex;
@@ -167,8 +157,7 @@ select option {
     }
 }
 
-/* RESPONSIVE: < 450px */
-@media (max-width: 450px) {
+@media (max-width: 425px) {
     .header-container {
         flex-direction: column;
         align-items: flex-start;
@@ -204,4 +193,23 @@ select option {
         font-size: 50px;
     }
 
+    .theme-toggle {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        border:1px solid var(--accent-color);
+
+        &:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+    }
+    select {
+        position: absolute;
+        top: 45px;
+        right: -40px;
+        width: 115px;
+        border-radius: 20px;
+        margin-top: 10px;
+    }
 }

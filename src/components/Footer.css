@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* Footer */
+/* FOOTER */
 .footer {
     width: 100%;
     background-color: rgba(30, 30, 30, 0.6);
@@ -12,11 +7,9 @@
     bottom: 0;
     left: 0;
     z-index: 1000;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Footer container ichidagi elementlar */
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -28,20 +21,12 @@
     flex-wrap: wrap;
 }
 
-/* Footer text */
-.footer .copyright {
-    font-size: 16px;
-    color: var(--accent-color);
-}
-
+.footer .copyright,
 .footer h3 {
     font-size: 16px;
-    font-weight: 400;
-    white-space: nowrap;
     color: var(--accent-color);
 }
 
-/* Social media icons */
 .social_media {
     display: flex;
     gap: 20px;
@@ -60,13 +45,10 @@
     color: white;
 }
 
-
-/* Responsive styles */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         align-items: center;
-        overflow: hidden;
         width: 100%;
     }
 
@@ -77,12 +59,10 @@
     }
 
     .social_media {
-        justify-content: center;        
+        justify-content: center;
     }
 
     .social_media a.ic {
         font-size: 30px;
     }
-
-    
 }

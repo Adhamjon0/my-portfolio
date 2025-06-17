@@ -5,16 +5,20 @@
     box-sizing: border-box;
 }
 
-/* Body style */
-body {
+/* Light mode */
+.home-container.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark mode */
+.home-container.dark {
     background-color: #121212;
     color: #00ffcc;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Page container */
 .home-container {
-    background-color: var(--secondary-bg-color, #121212);
     padding: 60px 20px;
     animation: fadeInUp 1s ease forwards;
 }
@@ -48,7 +52,7 @@ body {
     font-size: 50px;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid #00ffcc;
+    border-right: 2px solid currentColor;
     width: 0;
     animation: typing 3s steps(30) forwards, blink 0.7s infinite;
 }
@@ -70,9 +74,8 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transform: translateY(30px);
     opacity: 0;
-    animation: fadeInUp 1.5s ease forwards;  
+    animation: fadeInUp 1.5s ease forwards;
 }
-
 
 /* Typing keyframes */
 @keyframes typing {
@@ -111,7 +114,6 @@ body {
     }
 }
 
-
 /* Responsive styles */
 @media (max-width: 768px) {
     .home-page {
@@ -126,7 +128,8 @@ body {
         width: 390px;
     }
 
-    .left, .right {
+    .left,
+    .right {
         flex: none;
         width: 100%;
         text-align: center;
@@ -136,16 +139,39 @@ body {
         font-size: 30px;
         animation: typing 3s steps(30) forwards, blink 0.7s infinite;
     }
+
     .fade-in-text {
         font-size: 15px;
         margin-top: 15px;
         animation: fadeIn 2s ease-in 3s forwards;
         width: 90%;
     }
+
     .profile-img {
         width: 250px;
         height: 350px;
         margin-bottom: 150px;
     }
+}
 
+@media (max-width: 425px) {
+    .home-container {
+        padding: 30px 10px;
+        width: 100%;
+    }
+
+    .typing-text {
+        font-size: 25px;
+    }
+
+    .fade-in-text {
+        font-size: 14px;
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 300px;
+    }
 }

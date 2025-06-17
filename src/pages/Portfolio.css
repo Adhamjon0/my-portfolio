@@ -1,7 +1,21 @@
+/* CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.portfolio-section {
+    background-color: #121212;
+    color: #00ffcc;
+    min-height: 100vh;
+    padding: 50px 0;
+    transition: all 0.3s ease;
+}
+
+.portfolio-section.light {
+    background-color: #f4f4f4;
+    color: #222222;
 }
 
 .portfolio-container {
@@ -22,6 +36,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeUp 1s ease forwards;
     opacity: 0;
+    background-color: transparent;
 }
 
 .uzum-market:hover {
@@ -48,6 +63,10 @@
     font-weight: bold;
     margin-top: 10px;
     transition: color 0.3s ease;
+}
+
+.portfolio-section.light .uzum-market a {
+    color: #007f66;
 }
 
 .uzum-market a:hover {

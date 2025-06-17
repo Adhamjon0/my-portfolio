@@ -2,12 +2,14 @@ import React from 'react';
 import './About.css';
 import img2 from "../pages/photos/its me.jpg";
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext'; // theme kontekstini chaqirish
 
 export default function About() {
     const { t } = useTranslation();
+    const { theme } = useTheme(); // hozirgi theme holatini olish (light yoki dark)
 
     return (
-        <div className="about-container">
+        <div className={`about-container ${theme}`}>
             <div className="about-content">
                 <section className="about-section">
                     <h2 className="about-title">{t("about.title")}</h2>

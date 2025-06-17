@@ -1,5 +1,40 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Theme variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #121212;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #00ffcc;
+    --accent-color: #00ffcc;
+}
+
+/* LIGHT theme (default) */
+:root {
+    --input-bg: #ffffff;
+    --input-text: #000000;
+    --input-border: #ccc;
+}
+
+/* DARK theme */
+[data-theme='dark'] {
+    --input-bg: #1e1e1e;
+    --input-text: #ffffff;
+    --input-border: #555;
 }
