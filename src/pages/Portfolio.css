@@ -1,80 +1,94 @@
-/* CSS */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* SECTION */
 .portfolio-section {
-    background-color: #121212;
-    color: #00ffcc;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     min-height: 100vh;
-    padding: 50px 0;
+    padding: 50px 20px;
     transition: all 0.3s ease;
 }
 
-.portfolio-section.light {
-    background-color: #f4f4f4;
-    color: #222222;
-}
-
+/* Container */
 .portfolio-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* Project card */
 .uzum-market {
     width: 100%;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    border-radius: 20px;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeUp 1s ease forwards;
+    animation: fadeUp 0.8s ease forwards;
     opacity: 0;
-    background-color: transparent;
 }
 
 .uzum-market:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Image */
 .uzum_img {
     width: 100%;
-    max-width: 320px;
-    margin-left: 50px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border-radius: 15px;
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 20px 0;
     transition: transform 0.3s ease;
 }
 
 .uzum_img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
+/* Text styles */
+.uzum-market p {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Link */
 .uzum-market a {
     text-decoration: none;
-    color: #00ffcc;
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: color 0.3s ease;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.portfolio-section.light .uzum-market a {
+/* Light mode */
+.portfolio-section.light {
+    background-color: #f2f2f2;
+    color: #1a1a1a;
+}
+
+.portfolio-section.light .uzum-market {
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-section.light .uzum-market p {
     color: #007f66;
 }
 
-.uzum-market a:hover {
-    color: #00c2a0;
-}
-
-/* Fade-up animatsiyasi */
+/* Animation */
 @keyframes fadeUp {
     from {
         transform: translateY(50px);
@@ -87,22 +101,17 @@
     }
 }
 
-/* media */
+/* Responsive */
 @media (max-width: 768px) {
     .uzum-market {
-        padding: 20px;
+        padding: 16px;
     }
 
     .uzum_img {
-        max-width: 70%;
+        max-width: 90%;
     }
 
-    .uzum-market a {
-        font-size: 22px;
-    }
-
-    .portfolio-container {
-        margin-bottom: 150px;
-        padding: 0 20px;
+    .uzum-market p {
+        font-size: 18px;
     }
 }
