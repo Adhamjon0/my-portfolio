@@ -19,7 +19,7 @@ function AppContent() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 5000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 

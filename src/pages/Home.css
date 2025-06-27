@@ -1,3 +1,4 @@
+/*************  ✨ Windsurf Command 🌟  *************/
 /* Global reset */
 * {
     margin: 0;
@@ -7,19 +8,25 @@
 
 /* Light mode */
 .home-container.light {
-    background-color: #ffffff;
-    color: #000000;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    /* background-color: #ffffff;
+    color: #000000; */
 }
 
 /* Dark mode */
 .home-container.dark {
-    background-color: #121212;
-    color: #00ffcc;
+    --bg-color: #121212;
+    --text-color: #00ffcc;
+    /* background-color: #121212;
+    color: #00ffcc; */
 }
 
 /* Page container */
 .home-container {
     padding: 60px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     animation: fadeInUp 1s ease forwards;
 }
 
@@ -49,7 +56,6 @@
 
 /* Typing effect */
 .typing-text {
-    font-size: 50px;
     white-space: nowrap;
     overflow: hidden;
     border-right: 2px solid currentColor;
@@ -75,6 +81,7 @@
     transform: translateY(30px);
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
+
 }
 
 /* Typing keyframes */
@@ -136,21 +143,23 @@
     }
 
     .typing-text {
-        font-size: 30px;
+        font-size: 50px;
         animation: typing 3s steps(30) forwards, blink 0.7s infinite;
     }
 
     .fade-in-text {
-        font-size: 15px;
+        font-size: 20px;
         margin-top: 15px;
         animation: fadeIn 2s ease-in 3s forwards;
         width: 90%;
+        text-align: center;
     }
 
     .profile-img {
         width: 250px;
         height: 350px;
         margin-bottom: 150px;
+        margin-right: 20px;
     }
 }
 
@@ -161,17 +170,18 @@
     }
 
     .typing-text {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     .fade-in-text {
-        font-size: 14px;
+        font-size: 15px;
         margin-top: 10px;
         width: 90%;
     }
 
     .profile-img {
-        width: 200px;
+        width: 250px;
         height: 300px;
+        margin-right: 10px;
     }
 }

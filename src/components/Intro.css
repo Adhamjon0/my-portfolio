@@ -1,38 +1,99 @@
-/* INTRO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .intro-container {
     background-color: var(--bg-color);
-    color: var(--accent-color);
-    height: 100vh;
+    color: var(--text-color);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    padding: 0 20px;
+    padding: 40px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.intro-text {
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.intro-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.intro-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.intro-name {
     font-size: 3rem;
     font-weight: bold;
-    animation: zoomFadeUp 2s ease-in-out;
-    text-align: center;
-    text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--accent-color);
 }
 
-@keyframes zoomFadeUp {
-    0% {
-        opacity: 0;
-        transform: scale(0.5) translateY(40px);
+.typing-text {
+    margin-top: 15px;
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+/* Light mode */
+.intro-container.light {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+.intro-container.light .intro-name {
+    color: #121212;
+    text-shadow: none;
+}
+
+.intro-container.light .typing-text {
+    /* color: #00bcd4; */
+    color: #121212;
+}
+
+.lottie-anim {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intro-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
+    .intro-name {
+        font-size: 2.5rem;
+    }
+
+    .typing-text {
+        font-size: 1.2rem;
     }
 }
 
-@media (max-width: 400px) {
-    .intro-text {
+@media (max-width: 425px) {
+    .intro-name {
         font-size: 2rem;
-        text-shadow: 0 0 5px var(--accent-color);
+    }
+
+    .typing-text {
+        font-size: 1rem;
     }
 }

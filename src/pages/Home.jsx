@@ -13,7 +13,7 @@ export default function Home() {
             <div className="home-page">
                 <div className="left">
                     <div className="hero-container">
-                        <h1 className="typing-text">{t('home.greeting')}</h1>
+                        <h1 className="typing-text1">{t('home.greeting')}</h1>
                         <p className="fade-in-text">
                             {t('home.description')}
                         </p>
