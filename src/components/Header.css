@@ -104,6 +104,9 @@ select option {
     }
 }
 
+/* ... [avvalgi kodlaringiz saqlangan] ... */
+
+/* Mobil holatda nav menyu */
 @media (max-width: 768px) {
     .modal-icon {
         display: block;
@@ -114,14 +117,12 @@ select option {
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: rgba(30, 30, 30, 0.95);
+        background-color: rgba(30, 30, 30, 0.95); /* Dark mode default */
         display: none;
         flex-direction: column;
         align-items: flex-start;
         z-index: 1000;
-        
     }
-    
 
     .header__nav.active {
         display: flex;
@@ -155,8 +156,39 @@ select option {
     .header-actions select {
         width: 100%;
     }
+
+    /* ✅ Light mode orqa fon va yozuvlar */
+    body.light .header__nav {
+        background-color: rgba(240, 240, 240, 0.95); /* Xira kulrang */
+    }
+
+    body.light .nav__link {
+        color: #000 !important; /* Yozuvlar qora bo‘ladi */
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.light .nav__link:hover {
+        color: #444;
+    }
+
+    body.light .header-actions select {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #000;
+        border-color: #000;
+    }
+
+    body.light .theme-toggle {
+        border: 1px solid #000;
+        color: #000;
+    }
+
+    body.light .theme-toggle:hover {
+        background-color: #000;
+        color: #fff;
+    }
 }
 
+/* Mobil ekran uchun */
 @media (max-width: 425px) {
     .header-container {
         flex-direction: column;
@@ -166,6 +198,7 @@ select option {
 
     .nav__link {
         font-size: 18px;
+        color: white; /* ✅ Yozuvlarni oq rangga o‘zgartirildi */
     }
 
     .header-actions select {
@@ -197,13 +230,9 @@ select option {
         position: absolute;
         top: 0;
         right: 15px;
-        border:1px solid var(--accent-color);
-
-        &:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-        }
+        border: 1px solid var(--accent-color);
     }
+
     select {
         position: absolute;
         top: 45px;
@@ -213,3 +242,4 @@ select option {
         margin-top: 10px;
     }
 }
+
