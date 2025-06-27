@@ -1,3 +1,4 @@
+/*************  ✨ Windsurf Command 🌟  *************/
 import React from 'react'
 import './Portfolio.css'
 import uzumMarket from '../pages/photos/uzum.jpg'
@@ -11,9 +12,8 @@ export default function Portfolio() {
             <div className='portfolio-container'>
                 <div className='uzum-market'>
                     <h1>{t('portfolio.projects')}</h1>
-                    <img src={uzumMarket} className='uzum_img' alt="Uzum market" />
                     <a href="https://uzum-market-psi.vercel.app/" target="_blank">
-                        {t('portfolio.uzum')}
+                        <img src={uzumMarket} className='uzum_img' alt="Uzum market" />
                     </a>
                 </div>
 
@@ -25,3 +25,5 @@ export default function Portfolio() {
         </div>
     )
 }
+
+/*******  a11bec5e-0553-4841-8d67-d9d71f2ae2ff  *******/

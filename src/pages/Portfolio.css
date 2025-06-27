@@ -46,6 +46,7 @@
 .uzum_img {
     width: 100%;
     max-width: 320px;
+    margin-left: 50px;
     margin-bottom: 20px;
     margin-top: 20px;
     border-radius: 15px;
