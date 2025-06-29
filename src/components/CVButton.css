@@ -1,0 +1,24 @@
+.cv-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.cv-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Telefon uchun */
+@media (max-width: 480px) {
+    .cv-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

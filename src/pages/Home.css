@@ -84,6 +84,47 @@
 
 }
 
+/* Umumiy CV tugmasi uchun asosiy style */
+.download-cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 🌙 Dark mode uslubi */
+.home-container.dark .download-cv-button {
+    background-color: transparent;
+    color: #00ffcc;
+    border-color: #00ffcc;
+}
+
+.home-container.dark .download-cv-button:hover {
+    background-color: #00ffcc;
+    color: #121212;
+}
+
+/* ☀️ Light mode uslubi */
+.home-container.light .download-cv-button {
+    background-color: transparent;
+    color: #121212;
+    border-color: #121212;
+}
+
+.home-container.light .download-cv-button:hover {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+
+
+
 /* Typing keyframes */
 @keyframes typing {
     from {

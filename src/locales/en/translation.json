@@ -33,8 +33,9 @@
     },
     "home": {
         "greeting": "Hi, I'm Adhamjon",
-        "description": "A Frontend Developer building modern and responsive web experiences.",
-        "contact": "Contact Me With Telegram"
+        "description": "A frontend developer crafting modern and responsive web experiences.",
+        "contact": "Contact me via Telegram",
+        "downloadCV": "Download My CV"
     },
     "portfolio": {
         "projects": "Projects",
@@ -42,5 +43,6 @@
     },
     "skills": {
         "title": "My Skills"
-    }
+    },
+    "Download CV": "Download CV"
 }

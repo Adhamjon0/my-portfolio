@@ -32,9 +32,10 @@
         "alert": "✅ Xabaringiz muvaffaqiyatli yuborildi!"
     },
     "home": {
-        "greeting": "Salom, men Adhamjon",
-        "description": "Zamonaviy va moslashuvchan veb interfeyslar yaratadigan frontend dasturchi.",
-        "contact": "Telegram orqali bog‘laning"
+        "greeting": "Salom, men Adhamjonman",
+        "description": "Zamonaviy va moslashuvchan veb tajribalarni yaratadigan frontend dasturchi.",
+        "contact": "Telegram orqali bog‘laning",
+        "downloadCV": "Mening CVimni yuklab oling"
     },
     "portfolio": {
         "projects": "Loyihalar",
@@ -42,5 +43,6 @@
     },
     "skills": {
         "title": "Ko'nikmalarim"
-    }
+    },
+    "Download CV": "Mening rezyumemni yuklab oling"
 }

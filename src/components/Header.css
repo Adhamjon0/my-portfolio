@@ -54,11 +54,11 @@
 
 .theme-toggle {
     border: 1px solid var(--accent-color);
+}
 
-    &:hover {
-        background-color: var(--accent-color);
-        color: var(--bg-color);
-    }
+.theme-toggle:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
 }
 
 select {
@@ -91,20 +91,16 @@ select option {
     border: none;
 }
 
-    
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
-/* ... [avvalgi kodlaringiz saqlangan] ... */
 
 /* Mobil holatda nav menyu */
 @media (max-width: 768px) {
@@ -117,7 +113,7 @@ select option {
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: rgba(30, 30, 30, 0.95); /* Dark mode default */
+        background-color: rgba(30, 30, 30, 0.95);
         display: none;
         flex-direction: column;
         align-items: flex-start;
@@ -157,18 +153,13 @@ select option {
         width: 100%;
     }
 
-    /* ✅ Light mode orqa fon va yozuvlar */
     body.light .header__nav {
-        background-color: rgba(240, 240, 240, 0.95); /* Xira kulrang */
+        background-color: rgba(240, 240, 240, 0.95);
     }
 
     body.light .nav__link {
-        color: #000 !important; /* Yozuvlar qora bo‘ladi */
+        color: white !important;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    body.light .nav__link:hover {
-        color: #444;
     }
 
     body.light .header-actions select {
@@ -180,11 +171,6 @@ select option {
     body.light .theme-toggle {
         border: 1px solid #000;
         color: #000;
-    }
-
-    body.light .theme-toggle:hover {
-        background-color: #000;
-        color: #fff;
     }
 }
 
@@ -198,7 +184,11 @@ select option {
 
     .nav__link {
         font-size: 18px;
-        color: white; /* ✅ Yozuvlarni oq rangga o‘zgartirildi */
+        color: inherit;
+    }
+
+    .nav__link:hover {
+        color: inherit;
     }
 
     .header-actions select {
@@ -241,5 +231,5 @@ select option {
         border-radius: 20px;
         margin-top: 10px;
     }
-}
 
+}
