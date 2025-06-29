@@ -8,7 +8,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
-// import Intro from './components/Intro';
+import Intro from './components/Intro';
 import './i18n';
 import './App.css';
 import { ThemeProvider } from './context/ThemeContext';
@@ -24,7 +24,7 @@ function AppContent() {
   }, []);
 
   if (showIntro) {
-    // return <Intro />;
+    return <Intro />;
   }
 
   return (
