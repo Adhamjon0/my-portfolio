@@ -1,13 +1,23 @@
-/* FOOTER */
+/* 🌌 FUTURISTIC FOOTER */
 .footer {
     width: 100%;
-    background-color: rgba(30, 30, 30, 0.6);
-    padding: 20px 0;
+    background: rgba(15, 15, 20, 0.7);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 24px 0;
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 1000;
-    animation: fadeInUp 0.8s ease forwards;
+    z-index: 9999;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: background 0.3s ease, box-shadow 0.4s ease;
+}
+
+.footer:hover {
+    background: rgba(20, 20, 30, 0.85);
+    box-shadow: 0 -5px 30px rgba(0, 255, 255, 0.2);
 }
 
 .footer-container {
@@ -16,53 +26,82 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 0 20px;
+    gap: 25px;
+    padding: 0 25px;
     flex-wrap: wrap;
 }
 
+/* 🩵 Matn animatsiyasi */
 .footer .copyright,
 .footer h3 {
     font-size: 16px;
+    font-weight: 400;
     color: var(--accent-color);
+    position: relative;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    transition: color 0.3s ease, text-shadow 0.4s ease;
 }
 
+.footer h3:hover {
+    color: #fff;
+    text-shadow: 0 0 12px var(--accent-color);
+}
+
+/* ⚙️ Social media icons */
 .social_media {
     display: flex;
-    gap: 20px;
+    gap: 22px;
 }
 
 .social_media a.ic {
     color: var(--accent-color);
-    font-size: 20px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 22px;
+    transition: all 0.35s ease;
     text-decoration: none;
+    position: relative;
+}
+
+/* ✨ Neon hover va magnetic effect */
+.social_media a.ic::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social_media a.ic:hover::after {
+    opacity: 0.5;
+    transform: scale(1.8);
 }
 
 .social_media a.ic:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-    color: white;
+    transform: translateY(-4px) scale(1.2);
+    color: #fff;
+    filter: drop-shadow(0 0 10px var(--accent-color));
 }
 
+/* ⚡ Kichik puls bosilganda */
+.social_media a.ic:active {
+    transform: scale(0.9);
+}
+
+/* 📱 Responsiv */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        text-align: center;
     }
 
-    .footer .copyright,
     .footer h3 {
-        text-align: center;
         font-size: 14px;
     }
 
-    .social_media {
-        justify-content: center;
-    }
-
     .social_media a.ic {
-        font-size: 30px;
+        font-size: 28px;
     }
 }

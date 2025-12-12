@@ -8,9 +8,10 @@ import translationFR from "./locales/fr/translation.json"
 
 const resources = {
     en: { translation: translationEN },
-    uz: { translation: translationUZ },
+    fr: { translation: translationFR },
     ru: { translation: translationRU },
-    fr: { translation: translationFR }
+    uz: { translation: translationUZ }
+
 }
 
 i18n.use(initReactI18next).init({

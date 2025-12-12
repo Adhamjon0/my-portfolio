@@ -44,7 +44,7 @@ export default function Contact() {
                 <div className='cnt-left'>
                     <ul>
                         <li>{t('contact.phone')}</li>
-                        <p>+998 90 101 24 70</p>
+                        <p>+998 97 707 72 91</p>
 
                         <li>{t('contact.email')}</li>
                         <p>adhamjonsodiqov03@gmail.com</p>

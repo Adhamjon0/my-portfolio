@@ -15,8 +15,9 @@ body {
 .contact-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 119px 20px;
     animation: fadeInUp 1s ease forwards;
+
 }
 
 .contact-title {
@@ -32,6 +33,7 @@ body {
     justify-content: space-between;
     gap: 40px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 /* Left section */
@@ -167,6 +169,10 @@ button:hover {
 }
 
 @media (max-width: 425px) {
+
+    .contact-container {
+        padding-top: 150px;
+    }
     .contact {
         flex-direction: column;
         text-align: center;

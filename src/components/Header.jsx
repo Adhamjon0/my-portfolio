@@ -1,68 +1,190 @@
-// Header.jsx
-import "./Header.css"
-import { Link } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import { FiMenu } from "react-icons/fi"
-import { useState } from "react"
-import { useTheme } from '../context/ThemeContext';
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom"; // useLocation qo'shildi sahifa o'zgarishini tekshirish uchun
+import { FiMenu } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "../context/ThemeContext";
+import "./Header.css";
 
 export default function Header() {
     const { t, i18n } = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
+    const location = useLocation(); // sahifa o'zgarishini tekshirish uchun
 
-    const handleChangeLang = (e) => {
-        i18n.changeLanguage(e.target.value);
-    };
+    // ========== MENU FUNKSIYALARI ==========
+    const toggleMenu = () => setMenuOpen((s) => !s);
+    const closeMenu = () => menuOpen && setMenuOpen(false);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
+    // ========== LANGUAGE DROPDOWN ==========
+    function LanguageDropdown({ currentLang, onChange, lightMode }) {
+        const [open, setOpen] = useState(false);
+        const ref = useRef(null);
 
-    const closeMenu = () => {
-        if (menuOpen) {
-            setMenuOpen(false);
+        const langs = [
+            { code: "en", label: "English" },
+            { code: "fr", label: "French" },
+            { code: "uz", label: "Uzbek" },
+            { code: "ru", label: "Russian" }
+        ];
+
+        useEffect(() => {
+            function onDoc(e) {
+                if (!ref.current) return;
+                if (!ref.current.contains(e.target)) setOpen(false);
+            }
+            function onKey(e) {
+                if (e.key === "Escape") setOpen(false);
+            }
+            document.addEventListener("mousedown", onDoc);
+            document.addEventListener("keydown", onKey);
+            return () => {
+                document.removeEventListener("mousedown", onDoc);
+                document.removeEventListener("keydown", onKey);
+            };
+        }, []);
+
+        function toggle() {
+            setOpen((s) => !s);
         }
-    };
+
+        function pick(lang) {
+            onChange(lang);
+            setOpen(false);
+        }
+
+        return (
+            <div
+                ref={ref}
+                className={`lang-dropdown ${open ? "open" : ""} ${lightMode ? "light" : ""}`}
+            >
+                <button
+                    className="lang-dropdown__control"
+                    aria-haspopup="listbox"
+                    aria-expanded={open}
+                    onClick={toggle}
+                >
+                    {langs.find((l) => l.code === currentLang)?.label || currentLang}
+                    <span className="lang-arrow" aria-hidden>▾</span>
+                </button>
+
+                <ul
+                    className="lang-dropdown__list"
+                    role="listbox"
+                    aria-activedescendant={`lang-${currentLang}`}
+                    tabIndex={-1}
+                >
+                    {langs.map((l, i) => (
+                        <li
+                            key={l.code}
+                            id={`lang-${l.code}`}
+                            role="option"
+                            aria-selected={currentLang === l.code}
+                            className={`lang-dropdown__item ${currentLang === l.code ? "selected" : ""}`}
+                            onClick={() => pick(l.code)}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter" || e.key === " ") pick(l.code);
+                            }}
+                            tabIndex={0}
+                            style={{ transitionDelay: open ? `${i * 35}ms` : "0ms" }}
+                        >
+                            <span>{l.label}</span>
+                            {currentLang === l.code && <span className="lang-check">✓</span>}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+
+    // ========== CLOSE MENU WHEN CLICK OUTSIDE OR CHANGE PAGE ==========
+    useEffect(() => {
+        function handleClickOutside(e) {
+            const nav = document.querySelector('.header__nav');
+            const menuIcon = document.querySelector('.menu-icon');
+            if (menuOpen && nav && !nav.contains(e.target) && !menuIcon.contains(e.target)) {
+                setMenuOpen(false);
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menuOpen]);
+
+    // Sahifa o'zgarganda menu yopiladi
+    useEffect(() => {
+        if (menuOpen) setMenuOpen(false);
+    }, [location]);
 
     return (
-        <div className="header">
+        <header className={`header ${theme}`}>
             <div className="header-container">
-                {/* Logo */}
+
+                {/* ================= LOGO ================= */}
                 <div className="header__logo">
                     <h1 className="logo">
-                        <Link to="/" className="logo__link" onClick={closeMenu}>A.S</Link>
+                        <Link to="/" onClick={closeMenu}>
+                            A.S
+                        </Link>
                     </h1>
                 </div>
 
-                {/* Toggle icon */}
-                <div className="modal-icon" onClick={toggleMenu}>
+                {/* ================= MENU ICON (MOBILE) ================= */}
+                <div className="menu-icon" onClick={toggleMenu} aria-label="Open menu" role="button">
                     <FiMenu />
                 </div>
 
-                {/* Navigation */}
-                <nav className={`header__nav ${menuOpen ? "active" : ""}`}>
+                {/* ================= MOBILE OVERLAY ================= */}
+                <div
+                    className={`menu-overlay ${menuOpen ? "active" : ""}`}
+                    onClick={closeMenu}
+                ></div>
+
+                {/* ================= NAVIGATION ================= */}
+                <nav className={`header__nav ${menuOpen ? "active" : ""}`} role="navigation" aria-label="Main Navigation">
                     <ul className="nav__list">
-                        <li className="nav__item"><Link to="/about" className="nav__link" onClick={closeMenu}>{t("header.about")}</Link></li>
-                        <li className="nav__item"><Link to="/portfolio" className="nav__link" onClick={closeMenu}>{t("header.portfolio")}</Link></li>
-                        <li className="nav__item"><Link to="/skill" className="nav__link" onClick={closeMenu}>{t("header.skills")}</Link></li>
-                        <li className="nav__item"><Link to="/contact" className="nav__link" onClick={closeMenu}>{t("header.contact")}</Link></li>
+                        <li>
+                            <Link to="/about" onClick={closeMenu} className="nav-link">
+                                {t("header.about")}
+                                <span className="nav-underline" aria-hidden></span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/portfolio" onClick={closeMenu} className="nav-link">
+                                {t("header.portfolio")}
+                                <span className="nav-underline" aria-hidden></span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/skill" onClick={closeMenu} className="nav-link">
+                                {t("header.skills")}
+                                <span className="nav-underline" aria-hidden></span>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" onClick={closeMenu} className="nav-link">
+                                {t("header.contact")}
+                                <span className="nav-underline" aria-hidden></span>
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
 
-                {/* Language select + Theme toggle */}
+                {/* ================= LANGUAGE & THEME ================= */}
                 <div className="header-actions">
-                    <select name="lang" onChange={handleChangeLang} value={i18n.language}>
-                        <option value="en">English</option>
-                        <option value="fr">French</option>
-                        <option value="uz">Uzbek</option>
-                        <option value="ru">Russian</option>
-                    </select>
-                    <button onClick={toggleTheme} style={{ marginLeft: '10px' }} className="theme-toggle"> 
-                        {theme === 'light' ? '🌞' : '🌙'}
+                    <LanguageDropdown
+                        currentLang={i18n.language}
+                        onChange={(lang) => i18n.changeLanguage(lang)}
+                        lightMode={theme === "light"}
+                    />
+
+                    <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+                        {theme === "light" ? "🌞" : "🌙"}
                     </button>
                 </div>
+
             </div>
-        </div>
-    )
+        </header>
+    );
 }

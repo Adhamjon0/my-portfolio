@@ -7,111 +7,165 @@
 
 /* SECTION */
 .portfolio-section {
-    background-color: var(--bg-color);
-    color: var(--text-color);
     min-height: 100vh;
-    padding: 50px 20px;
-    transition: all 0.3s ease;
-}
-
-/* Container */
-.portfolio-container {
+    padding: 120px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.4s ease;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Project card */
-.uzum-market {
-    width: 100%;
-    max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeUp 0.8s ease forwards;
-    opacity: 0;
+.portfolio-section.dark {
+    background: linear-gradient(145deg, #0e0e0e, #1a1a1a);
+    color: #f1f1f1;
 }
 
-.uzum-market:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* Image */
-.uzum_img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    margin: 20px 0;
-    transition: transform 0.3s ease;
-}
-
-.uzum_img:hover {
-    transform: scale(1.03);
-}
-
-/* Text styles */
-.uzum-market p {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--accent-color);
-}
-
-/* Link */
-.uzum-market a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Light mode */
 .portfolio-section.light {
-    background-color: #f2f2f2;
-    color: #1a1a1a;
+    background: linear-gradient(145deg, #f9f9f9, #eaeaea);
+    color: #1c1c1c;
 }
 
-.portfolio-section.light .uzum-market {
-    background-color: #ffffff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+/* TITLE */
+.portfolio-title {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInUp 0.8s forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
 }
 
-.portfolio-section.light .uzum-market p {
-    color: #007f66;
+.portfolio-title h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    color: var(--accent-color, #00ffc6);
 }
 
-/* Animation */
-@keyframes fadeUp {
-    from {
-        transform: translateY(50px);
+.portfolio-title h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 80px;
+    height: 3px;
+    background: var(--accent-color, #00ffc6);
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.portfolio-title p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+/* GRID */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* CARD */
+.portfolio-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 255, 204, 0.25);
+}
+
+/* IMAGE */
+.img-box {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(0, 255, 204, 0.2);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.08);
+}
+
+/* CONTENT */
+.card-content {
+    text-align: center;
+    padding: 20px 15px;
+}
+
+.card-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--accent-color, #00ffc6);
+}
+
+.card-content p {
+    font-size: 16px;
+    color: inherit;
+    opacity: 0.85;
+}
+
+/* LINK */
+.portfolio-card a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+/* ANIMATION */
+@keyframes fadeInUp {
+    0% {
         opacity: 0;
+        transform: translateY(40px);
     }
 
-    to {
-        transform: translateY(0);
+    100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .uzum-market {
-        padding: 16px;
+    .portfolio-title h1 {
+        font-size: 32px;
     }
 
-    .uzum_img {
-        max-width: 90%;
+    .img-box {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .portfolio-section {
+        padding-top: 150px;
+        padding-bottom: 220px;
     }
 
-    .uzum-market p {
-        font-size: 18px;
+    .img-box {
+        height: 180px;
     }
 }

@@ -11,11 +11,11 @@
     },
     "about": {
         "title": "About Me",
-        "p1": "I'm Sodiqov Adhamjon G'ayratovich — a frontend developer from Samarkand, Uzbekistan.",
-        "p2": "I was born in 2008 and began my journey with HTML, CSS, and JavaScript.",
-        "p3": "I'm currently learning React.js and focusing on creating clean, responsive UIs.",
-        "p4": "I care about code quality, performance, and user experience.",
-        "p5": "Every project I build brings me closer to becoming the developer I aspire to be."
+        "p1": "I'm Sodiqov Adhamjon G'ayratovich, a passionate frontend developer based in Samarkand, Uzbekistan.",
+        "p2": "I started my journey in web development by learning React, HTML, CSS, and JavaScript, gradually building a solid foundation for modern web applications.",
+        "p3": "Currently, I focus on crafting clean, responsive, and user-friendly interfaces that enhance the user experience.",
+        "p4": "I am dedicated to writing maintainable code, optimizing performance, and delivering high-quality projects.",
+        "p5": "Each project I undertake helps me grow and brings me closer to my goal of becoming a skilled and innovative frontend developer."
     },
     "contact": {
         "title": "Contact me",

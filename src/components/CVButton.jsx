@@ -1,24 +1,30 @@
-// CVButton.jsx
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import './CVButton.css';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import "./CVButton.css";
+import { useTheme } from '../context/ThemeContext';
 
 export default function CVButton() {
     const { i18n, t } = useTranslation();
+    const { theme } = useTheme();
 
+    // PDF faylini til tartibiga mos qaytaradi
     const getCVLink = () => {
-        switch (i18n.language) {
-            case 'uz': return '/cv/cv_uz.pdf';
-            case 'ru': return '/cv/cv_ru.pdf';
-            case 'fr': return '/cv/cv_fr.pdf';
-            case 'en':
-            default: return '/cv/cv_en.pdf';
-        }
+        const lang = i18n.language || "en"; // default til
+        return process.env.PUBLIC_URL + `/cv-${lang}.pdf`;
     };
 
     return (
-        <a href={getCVLink()} download className="cv-button">
-            {t('Download CV')}
+        <a
+            href={getCVLink()}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`download-cv-button ${theme === 'dark'
+                ? 'text-[#00ffcc] border-[#00ffcc] hover:bg-[#00ffcc] hover:text-[#121212]'
+                : 'text-[#121212] border-[#121212] hover:bg-[#121212] hover:text-white'
+                }`}
+        >
+            {t("home.downloadCV")}
         </a>
     );
 }

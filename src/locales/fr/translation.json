@@ -10,12 +10,12 @@
         "motivation": "Continuez d’avancer. Le meilleur est à venir."
     },
     "about": {
-        "title": "À propos de moi",
-        "p1": "Je suis Sodiqov Adhamjon G'ayratovich — développeur frontend de Samarcande, Ouzbékistan.",
-        "p2": "Je suis né en 2008 et j'ai commencé mon parcours avec HTML, CSS et JavaScript.",
-        "p3": "Actuellement, j'apprends React.js et je me concentre sur des interfaces propres et réactives.",
-        "p4": "Je me soucie de la qualité du code, de la performance et de l'expérience utilisateur.",
-        "p5": "Chaque projet me rapproche du développeur que je souhaite devenir."
+        "title": "À Propos de Moi",
+        "p1": "Je suis Sodiqov Adhamjon G'ayratovich, un développeur frontend passionné basé à Samarcande, en Ouzbékistan.",
+        "p2": "J'ai commencé mon parcours en développement web en apprenant React, HTML, CSS et JavaScript, construisant progressivement une base solide pour les applications web modernes.",
+        "p3": "Actuellement, je me concentre sur la création d'interfaces propres, réactives et conviviales qui améliorent l'expérience utilisateur.",
+        "p4": "Je m'engage à écrire un code maintenable, à optimiser les performances et à livrer des projets de haute qualité.",
+        "p5": "Chaque projet que j'entreprends me fait progresser et me rapproche de mon objectif de devenir un développeur frontend compétent et innovant."
     },
     "contact": {
         "title": "Contactez-moi",

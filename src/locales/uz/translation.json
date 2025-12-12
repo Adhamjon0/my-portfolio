@@ -10,12 +10,12 @@
         "motivation": "Oldinga intiling. Eng zo‘ri hali oldinda."
     },
     "about": {
-        "title": "Men haqimda",
-        "p1": "Men Sodiqov Adhamjon G'ayratovichman — Samarqanddan bo‘lgan frontend dasturchiman.",
-        "p2": "2008-yilda tug‘ilganman va HTML, CSS hamda JavaScript bilan yo‘limni boshlaganman.",
-        "p3": "Hozirda React.js o‘rganmoqdaman va toza, responsiv UI yaratishga e'tibor qaratmoqdaman.",
-        "p4": "Kod sifati, ishlash tezligi va foydalanuvchi tajribasi men uchun muhim.",
-        "p5": "Har bir loyiham meni orzu qilgan dasturchiga yaqinlashtiradi."
+        "title": "Mening Haqimda",
+        "p1": "Men Sodiqov Adhamjon G'ayratovich, Samarqandda joylashgan ishtiyoqli frontend dasturchiman.",
+        "p2": "Men veb-dasturlash bo‘yicha React, HTML, CSS va JavaScriptni o‘rganishdan boshlab, zamonaviy veb-ilovalar uchun mustahkam asos yaratdim.",
+        "p3": "Hozirda men foydalanuvchi tajribasini oshiradigan, toza, moslashuvchan va qulay interfeyslar yaratishga e’tibor qaratmoqdaman.",
+        "p4": "Men har doim kodni oson boshqariladigan, samarali va yuqori sifatli loyihalarni taqdim qilishga intilaman.",
+        "p5": "Har bir loyiha meni rivojlantiradi va maqsadim — malakali va innovatsion frontend dasturchi bo‘lishga yaqinlashtiradi."
     },
     "contact": {
         "title": "Menga bog‘laning",

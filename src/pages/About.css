@@ -19,7 +19,7 @@
 
 /* Main container */
 .about-container {
-    padding: 60px 20px;
+    padding: 135px 20px;
 }
 
 /* Content layout */
@@ -124,7 +124,7 @@
     .about-section {
         text-align: center;
         margin-bottom: 20px;
-        padding: 0 20px;
+        padding-top:  70px;
     }
 
     .about-title {
@@ -144,8 +144,9 @@
 
 @media (max-width: 425px) {
     .about-container {
-        padding: 30px 10px;
+        padding-top: 100px;
     }
+
 
     .about-title {
         font-size: 26px;
@@ -157,7 +158,7 @@
     }
 
     .profile-img {
-        width: 200px;
+        width: 300px;
         height: 300px;
     }
 }
