@@ -14,6 +14,10 @@ export default function Skills() {
         { name: 'React', value: 75 },
         { name: 'C#', value: 60 },
         { name: 'Python', value: 50 },
+        { name: 'Java', value: 40 },
+        { name: 'SQL', value: 40 },
+        { name: 'Git', value: 70 },
+        
     ];
 
     return (
