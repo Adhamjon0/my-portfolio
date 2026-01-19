@@ -51,7 +51,7 @@ export default function Footer() {
 
                 <motion.div className="social_media" variants={fadeUp}>
                     {[
-                        { href: "https://instagram.com/the_adhamjon", icon: <SiInstagram /> },
+                        { href: "https://instagram.com/its.adhamjon", icon: <SiInstagram /> },
                         { href: "https://www.facebook.com/adhamjon.sodiqov.2025", icon: <SiFacebook /> },
                         { href: "https://www.linkedin.com/in/adhamjon-sodiqov-547371299/", icon: <SiLinkedin /> },
                         { href: "https://t.me/the_adhamjon", icon: <SiTelegram /> },
