@@ -63,13 +63,11 @@ export default function Contact() {
                             <p>📧 adhamjonsodiqov03@gmail.com</p>
                             <p>📞 +998 91 707 72 91</p>
                             <p>📍 Samarkand, Uzbekistan</p>
-                            <p>🌐 https://its.adhamjon.com</p>
-                            <p>👨🏻‍💻 https://github.com/Adhamjon0</p>
                         </div>
 
                         {/* SOCIAL ICONS */}
                         <div className="pc-socials">
-                            <a href="mailto:adhamjonsodiqov03@gmail.com" title="Email">
+                            <a href="mailto:adhamjonsodiqov03@gmail.com" title="Email" target="_blank" rel="noreferrer">
                                 <MdEmail />
                             </a>
 
@@ -97,10 +95,10 @@ export default function Contact() {
 
                         {/* DEV LINKS */}
                         <div className="pc-actions">
-                            <a href="https://github.com/Adhamjon0" target="_blank" className="pc-btn">
+                            <a href="https://github.com/Adhamjon0" target="_blank" rel="noreferrer" className="pc-btn">
                                 GitHub
                             </a>
-                            <a href="https://vercel.com/adhamjon0s-projects" target="_blank" className="pc-btn outline">
+                            <a href="https://vercel.com/adhamjon0s-projects" target="_blank" rel="noreferrer" className="pc-btn outline">
                                 Vercel
                             </a>
                         </div>
