@@ -63,6 +63,8 @@ export default function Contact() {
                             <p>📧 adhamjonsodiqov03@gmail.com</p>
                             <p>📞 +998 91 707 72 91</p>
                             <p>📍 Samarkand, Uzbekistan</p>
+                            <p>🌐 https://its.adhamjon.com</p>
+                            <p>👨🏻‍💻 https://github.com/Adhamjon0</p>
                         </div>
 
                         {/* SOCIAL ICONS */}
