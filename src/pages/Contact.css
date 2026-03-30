@@ -129,6 +129,10 @@ button:hover {
     color: #121212;
 }
 
+.contact-container.light .cnt-title {
+    color: #121212;
+}
+
 .contact-container.light .cnt-left li {
     color: #121212;
 }
@@ -250,16 +254,6 @@ PERSONAL CARD – DEVELOPER
 
 /* Avatar */
 .avatar-ring {
-    width: 130px;
-    height: 130px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    padding: 4px;
-    position: relative;
-}
-
-
-.avatar-ring {
     width: 200px;
     height: 200px;
     margin: 0 auto 20px;
@@ -320,6 +314,11 @@ PERSONAL CARD – DEVELOPER
     transform: translateY(-4px) scale(1.1);
 }
 
+/* SOCIAL ICONS DARK MODE */
+.personal-card-inline.light .pc-socials a:hover {
+    color: #121212;
+    border-color: #121212;
+}
 
 /* Buttons */
 .pc-actions {
@@ -345,9 +344,12 @@ PERSONAL CARD – DEVELOPER
 }
 
 /* buttons dark mode  */
-
 .personal-card-inline.light .pc-btn {
     border-color: #121212;
     color: #121212;
+}
+.personal-card-inline.light .pc-btn:hover {
+    background: #121212;
+    color: #ffffff;
 }
 
