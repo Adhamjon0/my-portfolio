@@ -10,7 +10,7 @@ export default function Intro() {
 
     return (
         <section className={`intro-container ${theme === 'light' ? 'light' : ''}`}>
-            {/* <div className="intro-content">
+            <div className="intro-content">
                 <div className="intro-left">
                     <h1 className="intro-name">Adhamjon Sodiqov</h1>
                     <TypeAnimation
@@ -31,7 +31,7 @@ export default function Intro() {
                 <div className="intro-right">
                     <Lottie animationData={devAnimation} loop className="lottie-anim" />
                 </div>
-            </div> */}
+            </div>
         </section>
     );
 }
