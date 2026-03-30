@@ -17,7 +17,6 @@ body {
     margin: 0 auto;
     padding: 119px 20px;
     animation: fadeInUp 1s ease forwards;
-
 }
 
 .contact-title {
@@ -34,6 +33,19 @@ body {
     gap: 40px;
     flex-wrap: wrap;
     margin-bottom: 40px;
+}
+
+.cnt-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--primary-color, #00ffcc);
+    text-align: center;
+}
+
+.subtittle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 /* Left section */
@@ -220,7 +232,7 @@ button:hover {
 
 /* PERSONAL CARD INLINE */
 /* =========================
-   PERSONAL CARD – DEVELOPER
+PERSONAL CARD – DEVELOPER
 ========================= */
 
 .personal-card-inline {
@@ -243,8 +255,16 @@ button:hover {
     margin: 0 auto 20px;
     border-radius: 50%;
     padding: 4px;
-    background: linear-gradient(360deg, #00ffcc, transparent);
-    animation: rotateRing 12s linear infinite;
+    position: relative;
+}
+
+
+.avatar-ring {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 4px;
 }
 
 .avatar-ring img {
@@ -252,6 +272,7 @@ button:hover {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    display: block;
 }
 
 /* Name & role */
@@ -280,14 +301,14 @@ button:hover {
 .pc-socials {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 7px;
     margin: 18px 0 22px;
 }
 
 .pc-socials a {
-    font-size: 22px;
+    font-size: 27px;
     color: inherit;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50%;
     border: 1px solid transparent;
     transition: all 0.3s ease;
@@ -329,13 +350,4 @@ button:hover {
     border-color: #121212;
     color: #121212;
 }
-/* Animation */
-@keyframes rotateRing {
-    from {
-        transform: rotate(0deg);
-    }
 
-    to {
-        transform: rotate(360deg);
-    }
-}

@@ -2,6 +2,7 @@ import React from 'react';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../context/ThemeContext';
+import avatar from "../pages/photos/avatar.jpg";
 
 import {
     BiLogoInstagram,
@@ -31,8 +32,8 @@ export default function Contact() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { name, email, subject, message } = e.target;
-        await sendToTelegram(name.value, email.value, subject.value, message.value);
+        const { firstname, email, subject, message } = e.target;
+        await sendToTelegram(firstname.value, email.value, subject.value, message.value);
         alert(t('contact.alert'));
         e.target.reset();
     };
@@ -48,11 +49,11 @@ export default function Contact() {
                     <div className={`personal-card-inline ${theme}`}>
 
                         <div className="avatar-ring">
-                            <img src="../pages/photos/avatar.jpg" alt="Adhamjon" />
+                            <img src={avatar} alt="avatar" />
                         </div>
 
                         <h2 className="pc-name">
-                            Adham Sodiqov
+                            Adham Sodiqov G'ayratovich
                         </h2>
 
                         <p className="pc-role">
@@ -109,9 +110,12 @@ export default function Contact() {
 
                 {/* 🔹 FORM (ESKI HOLATIDA) */}
                 <div className="cnt-right">
+                    <h1 className="cnt-title">{t('contact.tittle2')}</h1>
+                    <p className='subtittle'>{t('contact.subtittle')}</p>
                     <form onSubmit={handleSubmit}>
-                        <input type="text" placeholder={t('contact.fullName')} name="name" required />
-                        <input type="text" placeholder={t('contact.phonePlaceholder')} name="phone" />
+                        <input type="text" placeholder={t('contact.firstName')} name="firstname" required />
+                        <input type="text" placeholder={t('contact.lastName')} name="lastname" required />
+                        <input type="text" placeholder={t('contact.phonePlaceholder')} name="phone" required />
                         <input type="email" placeholder={t('contact.emailPlaceholder')} name="email" required />
                         <input type="text" placeholder={t('contact.subject')} name="subject" required />
                         <textarea placeholder={t('contact.message')} name="message" required></textarea>
