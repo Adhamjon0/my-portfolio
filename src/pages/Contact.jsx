@@ -53,7 +53,7 @@ export default function Contact() {
                         </div>
 
                         <h2 className="pc-name">
-                            Adham Sodiqov G'ayratovich
+                            Adhamjon Sodiqov G'ayratovich
                         </h2>
 
                         <p className="pc-role">

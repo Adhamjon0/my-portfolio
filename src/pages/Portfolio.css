@@ -134,6 +134,13 @@
     display: block;
 }
 
+.description {
+    margin: 10px 0;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
 /* ANIMATION */
 @keyframes fadeInUp {
     0% {

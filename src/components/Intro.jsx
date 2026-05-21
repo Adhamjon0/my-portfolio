@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Intro.css';
 import { TypeAnimation } from 'react-type-animation';
 import Lottie from 'lottie-react';
@@ -7,6 +7,16 @@ import { useTheme } from '../context/ThemeContext';
 
 export default function Intro() {
     const { theme } = useTheme();
+
+    // ✅ Intro tugagandan keyin sahifa yuqoridan boshlansin
+    useEffect(() => {
+        // 10 soniyadan keyin Home default
+        const timer = setTimeout(() => {
+            window.scrollTo(0, 0); // sahifa yuqoridan boshlansin
+        }, 10000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <section className={`intro-container ${theme === 'light' ? 'light' : ''}`}>
