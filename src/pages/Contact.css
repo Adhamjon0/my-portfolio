@@ -1,355 +1,247 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ================= CONTACT ================= */
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    padding: 140px 20px;
+    overflow: hidden;
 }
 
-body {
-    background-color: #121212;
-    color: #00ffcc;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* BACKGROUND */
+.contact-bg {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.15), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(15, 76, 129, 0.25), transparent 40%),
+        #07111f;
+
+    z-index: 0;
 }
 
-/* Container */
-.contact-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 119px 20px;
-    animation: fadeInUp 1s ease forwards;
-}
-
+/* TITLE */
 .contact-title {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: var(--primary-color, #00ffcc);
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+    padding: 0 15px;
 }
 
-/* Contact layout */
-.contact {
+.contact-title h1 {
+    font-size: 38px;
+    color: #fff;
+}
+
+.contact-title p {
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+/* ================= CONTAINER (FIXED SPACING) ================= */
+
+.contact-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+
+    gap: 45px;
+
+    /* 🔥 IMPORTANT: LEFT/RIGHT AIR */
+    padding: 0 20px;
+}
+
+/* ================= CARD ================= */
+
+.contact-card,
+.contact-form {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+
+    /* 🔥 FIX: ichki bo‘sh joy oshirildi */
+    padding: 50px 40px;
+
+    border-radius: 26px;
+
+    /* shadow bilan “floating” effect */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= AVATAR ================= */
+
+.avatar img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid #d4af37;
+}
+
+/* NAME */
+.name {
+    margin-top: 18px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.role {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* ================= INFO ================= */
+
+.info p {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
+    gap: 14px;
+    align-items: center;
 
-.cnt-title {
-    font-size: 30px;
-    margin-bottom: 20px;
-    color: var(--primary-color, #00ffcc);
-    text-align: center;
-}
+    padding: 16px;
+    margin: 14px 0;
 
-.subtittle {
-    font-size: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-}
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
 
-/* Left section */
-.cnt-left {
-    flex: 1;
-    animation: fadeInUp 1.2s ease forwards;
-}
-
-.cnt-left ul {
-    list-style: none;
-}
-
-.cnt-left li {
-    font-size: 20px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #00ffcc;
-}
-
-.cnt-left p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #cccccc;
-}
-
-/* Right section (form) */
-.cnt-right {
-    flex: 1;
-    animation: fadeInUp 1.5s ease forwards;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-input,
-textarea {
-    padding: 12px;
-    border: 1px solid #00ffcc;
-    background-color: transparent;
-    color: #ffffff;
-    border-radius: 8px;
+    color: #cbd5e1;
     font-size: 16px;
-    resize: none;
+
     transition: 0.3s;
 }
 
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: white;
+.info p:hover {
+    transform: translateX(6px);
+    border: 1px solid #d4af37;
 }
 
-/* Submit button */
+.info svg {
+    font-size: 24px;
+    color: #d4af37;
+}
+
+/* ================= SOCIAL ================= */
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.socials a {
+    font-size: 22px;
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    transform: translateY(-6px);
+    color: #d4af37;
+}
+
+/* ================= FORM ================= */
+
+.contact-form h1 {
+    color: #fff;
+    font-size: 30px;
+}
+
+.sub {
+    color: #94a3b8;
+    margin-bottom: 18px;
+}
+
+/* LABEL */
+label {
+    display: block;
+    margin: 12px 0 8px;
+    color: #e2e8f0;
+    font-size: 15px;
+}
+
+/* INPUT */
+input,
+textarea {
+    width: 100%;
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #fff;
+    outline: none;
+
+    font-size: 15px;
+}
+
+/* TEXTAREA */
+textarea {
+    min-height: 140px;
+}
+
+/* BUTTON */
 button {
-    padding: 12px;
-    background-color: transparent;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
+    width: 100%;
+    margin-top: 18px;
+    padding: 16px;
+
+    background: linear-gradient(90deg, #d4af37, #f97316);
+    border: none;
+
+    font-weight: 700;
     font-size: 16px;
-    border-radius: 50px;
+
+    border-radius: 14px;
     cursor: pointer;
-    transition: all 0.3s ease;
+
+    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #00ffcc;
-    color: #121212;
-    border-color: white;
+    transform: scale(1.03);
 }
 
-/* Light mode styles */
-.contact-container.light {
-    background-color: #ffffff;
-    color: #121212;
+/* ================= STATUS ================= */
+
+.error {
+    color: #ef4444;
 }
 
-.contact-container.light .contact-title {
-    color: #121212;
+.success {
+    color: #22c55e;
 }
 
-.contact-container.light .cnt-title {
-    color: #121212;
-}
+/* ================= RESPONSIVE ================= */
 
-.contact-container.light .cnt-left li {
-    color: #121212;
-}
-
-.contact-container.light .cnt-left p {
-    color: #333333;
-}
-
-.contact-container.light input,
-.contact-container.light textarea {
-    background-color: #f3f3f3;
-    color: #121212;
-    border: 1px solid #ccc;
-}
-
-.contact-container.light button {
-    background-color: #121212;
-    color: #ffffff;
-    border-color: #121212;
-}
-
-.contact-container.light button:hover {
-    background-color: #333333;
-    border-color: #000000;
-}
-
-/* Fade in up animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    .contact {
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 150px;
-    }
-
-    .cnt-left,
-    .cnt-right {
-        flex: none;
-        width: 100%;
-    }
-}
-
-@media (max-width: 425px) {
+@media (max-width: 435px) {
 
     .contact-container {
-        padding-top: 150px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        /* 🔥 mobile padding fix */
+        padding: 0 10px;
     }
 
-    .contact {
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 150px;
+    .contact-card,
+    .contact-form {
+        padding: 35px 25px;
     }
 
-    .cnt-left,
-    .cnt-right {
-        flex: none;
-        width: 100%;
-    }
-
-    .cnt-left ul li {
-        font-size: 18px;
-    }
-
-    .cnt-left p {
-        font-size: 16px;
-    }
-
-    .cnt-right form {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    input,
-    textarea {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 28px;
-        margin-bottom: 30px;
+    .contact-title h1 {
+        font-size: 30px;
     }
 }
-
-/* PERSONAL CARD INLINE */
-/* =========================
-PERSONAL CARD – DEVELOPER
-========================= */
-
-.personal-card-inline {
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid #00ffcc;
-    text-align: center;
-    animation: fadeInUp 1.4s ease forwards;
-}
-
-.personal-card-inline.light {
-    border-color: #121212;
-    color: #121212;
-}
-
-/* Avatar */
-.avatar-ring {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
-    padding: 4px;
-}
-
-.avatar-ring img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Name & role */
-.pc-name {
-    font-size: 26px;
-}
-
-.pc-name span {
-    color: #00ffcc;
-}
-
-.pc-role {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 12px;
-}
-
-/* Info */
-.pc-info p {
-    font-size: 14px;
-    margin-bottom: 6px;
-    opacity: 0.85;
-}
-
-/* SOCIAL ICONS – REACT ICONS */
-.pc-socials {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    margin: 18px 0 22px;
-}
-
-.pc-socials a {
-    font-size: 27px;
-    color: inherit;
-    padding: 5px;
-    border-radius: 50%;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.pc-socials a:hover {
-    color: #00ffcc;
-    border-color: #00ffcc;
-    transform: translateY(-4px) scale(1.1);
-}
-
-/* SOCIAL ICONS DARK MODE */
-.personal-card-inline.light .pc-socials a:hover {
-    color: #121212;
-    border-color: #121212;
-}
-
-/* Buttons */
-.pc-actions {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.pc-btn {
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 14px;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-
-.pc-btn:hover {
-    background: #00ffcc;
-    color: #121212;
-}
-
-/* buttons dark mode  */
-.personal-card-inline.light .pc-btn {
-    border-color: #121212;
-    color: #121212;
-}
-.personal-card-inline.light .pc-btn:hover {
-    background: #121212;
-    color: #ffffff;
-}
-

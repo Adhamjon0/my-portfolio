@@ -1,7 +1,7 @@
-// Footer.jsx
-import React from 'react'
-import { motion } from 'framer-motion'
-import "./Footer.css"
+import React from "react";
+import { motion } from "framer-motion";
+import "./Footer.css";
+
 import {
     SiFacebook,
     SiInstagram,
@@ -9,71 +9,69 @@ import {
     SiTelegram,
     SiGithub,
     SiWhatsapp,
-    SiVercel
-} from 'react-icons/si'
-import { useTranslation } from 'react-i18next'
+} from "react-icons/si";
+
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+
     const { t } = useTranslation();
 
-    // Animatsiya sozlamalari
-    const fadeUp = {
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
-    };
-
-    const iconHover = {
-        hover: { scale: 1.25, rotate: 5, transition: { type: "spring", stiffness: 300 } }
-    };
+    const socials = [
+        { href: "https://instagram.com/adam.dev18", icon: <SiInstagram /> },
+        { href: "https://facebook.com/adhamjon.sodiqov.2025/", icon: <SiFacebook /> },
+        { href: "https://www.linkedin.com/in/adhamjon-sodiqov-547371299/", icon: <SiLinkedin /> },
+        { href: "https://t.me/the_adhamjon", icon: <SiTelegram /> },
+        { href: "https://wa.me/998917077291", icon: <SiWhatsapp /> },
+        { href: "https://github.com/Adhamjon0", icon: <SiGithub /> },
+    ];
 
     return (
-        <motion.footer 
-            className="footer"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-        >
-            <motion.div 
-                className='footer-container'
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
-                <motion.p className="copyright" variants={fadeUp}>
-                    &copy; 2025 {t("footer.portfolio")}
-                </motion.p>
+        <footer className="footer">
 
-                <motion.h3 variants={fadeUp}>
-                    {t("footer.motivation")}
-                </motion.h3>
+            <div className="footer-bg"></div>
 
-                <motion.div className="social_media" variants={fadeUp}>
-                    {[
-                        { href: "https://instagram.com/adhamjon.codes", icon: <SiInstagram /> },
-                        { href: "https://www.facebook.com/adhamjon.sodiqov.2025", icon: <SiFacebook /> },
-                        { href: "https://www.linkedin.com/in/adhamjon-sodiqov-547371299/", icon: <SiLinkedin /> },
-                        { href: "https://t.me/the_adhamjon", icon: <SiTelegram /> },
-                        { href: "https://wa.me/998917077291", icon: <SiWhatsapp /> },
-                        { href: "https://github.com/Adhamjon0", icon: <SiGithub /> },
-                        { href: "https://vercel.com/adhamjon0s-projects", icon: <SiVercel /> },
-                    ].map((social, index) => (
+            <div className="footer-container">
+
+                {/* TITLE */}
+                <motion.h2
+                    className="footer-title"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    ✨ {t("footer.motivation")}
+                </motion.h2>
+
+                <p className="footer-sub">
+                    🚀 “Great design is not just seen — it is felt.”
+                </p>
+
+                {/* SOCIALS */}
+                <div className="socials">
+                    {socials.map((s, i) => (
                         <motion.a
-                            key={index}
-                            href={social.href}
+                            key={i}
+                            href={s.href}
                             target="_blank"
-                            rel="noopener noreferrer"
-                            className="ic"
-                            variants={iconHover}
-                            whileHover="hover"
+                            rel="noreferrer"
+                            whileHover={{ scale: 1.2, rotate: 5 }}
                             whileTap={{ scale: 0.9 }}
                         >
-                            {social.icon}
+                            {s.icon}
                         </motion.a>
                     ))}
-                </motion.div>
-            </motion.div>
-        </motion.footer>
-    )
+                </div>
+
+                {/* LINE */}
+                <div className="line"></div>
+
+                {/* COPYRIGHT */}
+                <p className="copyright">
+                    © 2026 <span>Adhamjon Portfolio</span> • All rights reserved
+                </p>
+
+            </div>
+        </footer>
+    );
 }

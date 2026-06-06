@@ -1,129 +1,177 @@
-import React from 'react';
-import './Contact.css';
-import { useTranslation } from 'react-i18next';
-import { useTheme } from '../context/ThemeContext';
+import React, { useState } from "react";
+import "./Contact.css";
+import { motion } from "framer-motion";
+
 import avatar from "../pages/photos/avatar.jpg";
 
 import {
     BiLogoInstagram,
     BiLogoWhatsapp,
-    BiLogoFacebook,
     BiLogoTelegram,
     BiLogoGithub,
+    BiLogoFacebook,
 } from "react-icons/bi";
-import { MdEmail } from "react-icons/md";
-
+import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 
 export default function Contact() {
-    const { t } = useTranslation();
-    const { theme } = useTheme();
 
-    const sendToTelegram = async (name, email, subject, message) => {
-        const token = '7962235971:AAE0wF3vE3vMYOjKK2VK6kVc_1oMJL36sl4';
-        const chatId = '6468423303';
-        const text = `📩 Yangi xabar:\n\n👤 Ismi: ${name}\n📧 Email: ${email}\n📝 Mavzu: ${subject}\n💬 Xabar: ${message}`;
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
 
-        await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: chatId, text })
+    const [status, setStatus] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!form.name || !form.email || !form.subject || !form.message) {
+            setStatus("error");
+            return;
+        }
+
+        setStatus("success");
+
+        setForm({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
         });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const { firstname, email, subject, message } = e.target;
-        await sendToTelegram(firstname.value, email.value, subject.value, message.value);
-        alert(t('contact.alert'));
-        e.target.reset();
-    };
-
     return (
-        <div className={`contact-container ${theme}`}>
-            <h1 className="contact-title">{t('contact.title')}</h1>
+        <section className="contact" id="contact">
 
-            <div className="contact">
+            <div className="contact-bg"></div>
 
-                {/* 🔹 PERSONAL CARD – DEVELOPER */}
-                <div className="cnt-left">
-                    <div className={`personal-card-inline ${theme}`}>
+            {/* TITLE */}
+            <motion.div
+                className="contact-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                <h1>📩 Aloqa sahifasi</h1>
+                <p>🚀 Loyihangiz bormi? Birga yaratamiz</p>
+            </motion.div>
 
-                        <div className="avatar-ring">
-                            <img src={avatar} alt="avatar" />
-                        </div>
+            <div className="contact-container">
 
-                        <h2 className="pc-name">
-                            Adhamjon Sodiqov G'ayratovich
-                        </h2>
+                {/* LEFT CARD */}
+                <motion.div
+                    className="contact-card"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
 
-                        <p className="pc-role">
-                            Frontend Developer
-                        </p>
+                    <div className="avatar">
+                        <img src={avatar} alt="Adhamjon" />
+                    </div>
 
-                        <div className="pc-info">
-                            <p>📧 adhamjonsodiqov03@gmail.com</p>
-                            <p>📞 +998 91 707 72 91</p>
-                            <p>📍 Samarkand, Uzbekistan</p>
-                        </div>
+                    <h2 className="name">✨ Adhamjon Sodiqov</h2>
+                    <p className="role">🚀 Frontend Developer • UI/UX Designer</p>
 
-                        {/* SOCIAL ICONS */}
-                        <div className="pc-socials">
-                            <a href="mailto:adhamjonsodiqov03@gmail.com" title="Email" target="_blank" rel="noreferrer">
-                                <MdEmail />
-                            </a>
+                    <div className="info">
 
-                            <a href="https://instagram.com/its.adhamjon" target="_blank" rel="noreferrer">
-                                <BiLogoInstagram />
-                            </a>
-
-                            <a href="https://wa.me/998977077291" target="_blank" rel="noreferrer">
-                                <BiLogoWhatsapp />
-                            </a>
-
-                            <a href="https://www.facebook.com/adhamjon.sodiqov.2025" title="Facebook" target="_blank" rel="noreferrer">
-                                <BiLogoFacebook />
-                            </a>
-
-                            <a href="https://t.me/the_adhamjon" title="Telegram" target="_blank" rel="noreferrer">
-                                <BiLogoTelegram />
-                            </a>
-
-                            <a href="https://github.com/Adhamjon0" target="_blank" rel="noreferrer">
-                                <BiLogoGithub />
-                            </a>
-                        </div>
-
-
-                        {/* DEV LINKS */}
-                        <div className="pc-actions">
-                            <a href="https://github.com/Adhamjon0" target="_blank" rel="noreferrer" className="pc-btn">
-                                GitHub
-                            </a>
-                            <a href="https://vercel.com/adhamjon0s-projects" target="_blank" rel="noreferrer" className="pc-btn outline">
-                                Vercel
-                            </a>
-                        </div>
+                        <p><MdEmail /> adhamjonsodiqov03@gmail.com</p>
+                        <p><MdPhone /> +998 91 707 72 91</p>
+                        <p><MdLocationOn /> Samarqand, Uzbekistan</p>
 
                     </div>
-                </div>
 
+                    <div className="socials">
 
-                {/* 🔹 FORM (ESKI HOLATIDA) */}
-                <div className="cnt-right">
-                    <h1 className="cnt-title">{t('contact.tittle2')}</h1>
-                    <p className='subtittle'>{t('contact.subtittle')}</p>
+                        <a href="https://instagram.com/adam.dev18" target="_blank" rel="noopener noreferrer">
+                            <BiLogoInstagram />
+                        </a>
+                        <a href="https://wa.me/998917077291" target="_blank" rel="noopener noreferrer">
+                            <BiLogoWhatsapp />
+                        </a>
+                        <a href="https://t.me/the_adhamjon" target="_blank" rel="noopener noreferrer">
+                            <BiLogoTelegram />
+                        </a>
+                        <a href="https://github.com/Adhamjon0" target="_blank" rel="noopener noreferrer">
+                            <BiLogoGithub />
+                        </a>
+                        <a href="https://www.facebook.com/adhamjon.sodiqov.2025/" target="_blank" rel="noopener noreferrer">
+                            <BiLogoFacebook />
+                        </a>
+
+                    </div>
+
+                </motion.div>
+
+                {/* RIGHT FORM */}
+                <motion.div
+                    className="contact-form"
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7 }}
+                >
+
+                    <h1>📬 Men bilan bog‘laning</h1>
+                    <p className="sub">✨ Xabar yuboring — tezda javob beraman</p>
+
+                    {status === "error" && (
+                        <p className="error">⚠️ Barcha maydonlarni to‘ldiring</p>
+                    )}
+
+                    {status === "success" && (
+                        <p className="success">✅ Xabaringiz yuborildi</p>
+                    )}
+
                     <form onSubmit={handleSubmit}>
-                        <input type="text" placeholder={t('contact.firstName')} name="firstname" required />
-                        <input type="text" placeholder={t('contact.lastName')} name="lastname" required />
-                        <input type="text" placeholder={t('contact.phonePlaceholder')} name="phone" required />
-                        <input type="email" placeholder={t('contact.emailPlaceholder')} name="email" required />
-                        <input type="text" placeholder={t('contact.subject')} name="subject" required />
-                        <textarea placeholder={t('contact.message')} name="message" required></textarea>
-                        <button type="submit">{t('contact.send')}</button>
+
+                        <label>👤 Ismingiz</label>
+                        <input
+                            placeholder="Adhamjon"
+                            value={form.name}
+                            onChange={(e) =>
+                                setForm({ ...form, name: e.target.value })
+                            }
+                        />
+
+                        <label>📧 Email</label>
+                        <input
+                            placeholder="example@gmail.com"
+                            value={form.email}
+                            onChange={(e) =>
+                                setForm({ ...form, email: e.target.value })
+                            }
+                        />
+
+                        <label>📌 Mavzu</label>
+                        <input
+                            placeholder="Loyiha haqida..."
+                            value={form.subject}
+                            onChange={(e) =>
+                                setForm({ ...form, subject: e.target.value })
+                            }
+                        />
+
+                        <label>💬 Xabar</label>
+                        <textarea
+                            placeholder="O‘z fikringizni yozing..."
+                            value={form.message}
+                            onChange={(e) =>
+                                setForm({ ...form, message: e.target.value })
+                            }
+                        />
+
+                        <button type="submit">
+                            🚀 Yuborish
+                        </button>
+
                     </form>
-                </div>
+
+                </motion.div>
 
             </div>
-        </div>
+
+        </section>
     );
 }

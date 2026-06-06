@@ -1,40 +1,213 @@
-/* Global Reset */
-* {
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =========================================================
+   ROOT COLORS
+========================================================= */
+
+:root {
+    --bg-primary: #07111f;
+    --bg-secondary: #0f4c81;
+    --bg-card: rgba(255, 255, 255, 0.05);
+
+    --gold: #d4af37;
+    --orange: #f97316;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+
+    --border-color: rgba(255, 255, 255, 0.08);
+
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+    --transition: 0.35s ease;
+}
+
+/* =========================================================
+   HTML & BODY
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
     overflow-x: hidden;
+    font-family: "Inter", sans-serif;
+
+    color: var(--text-primary);
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(212, 175, 55, 0.12),
+            transparent 35%),
+
+        radial-gradient(circle at bottom right,
+            rgba(15, 76, 129, 0.18),
+            transparent 35%),
+
+        linear-gradient(135deg,
+            #07111f 0%,
+            #0b1a30 50%,
+            #07111f 100%);
+
+    background-attachment: fixed;
 }
 
-/* Theme variables */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --accent-color: #121212;
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-[data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #00ffcc;
-    --accent-color: #00ffcc;
+::-webkit-scrollbar-track {
+    background: #08101d;
 }
 
-/* LIGHT theme (default) */
-:root {
-    --input-bg: #ffffff;
-    --input-text: #000000;
-    --input-border: #ccc;
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom,
+            var(--gold),
+            var(--orange));
+    border-radius: 50px;
 }
 
-/* DARK theme */
-[data-theme='dark'] {
-    --input-bg: #1e1e1e;
-    --input-text: #ffffff;
-    --input-border: #555;
+::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8;
+}
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+    min-height: 100vh;
+}
+
+/* =========================================================
+   APP WRAPPER
+========================================================= */
+
+.app-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.app-content {
+    flex: 1;
+    width: 100%;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    position: relative;
+    width: 100%;
+    scroll-margin-top: 110px;
+}
+
+/* Premium separator */
+
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(320px, 65%);
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(212, 175, 55, 0.35),
+            transparent);
+}
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+video {
+    max-width: 100%;
+}
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    margin-top: auto;
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+    background: rgba(212, 175, 55, 0.35);
+    color: #fff;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 90px;
+    }
 }

@@ -1,17 +1,18 @@
-// App.jsx
-import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Skills from './pages/Skills';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
-import Intro from './components/Intro';
-import './i18n';
-import './App.css';
-import { ThemeProvider } from './context/ThemeContext';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Intro from "./components/Intro";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Skills from "./pages/Skills";
+import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
+
+import "./i18n";
+import "./App.css";
 
 function AppContent() {
   const [showIntro, setShowIntro] = useState(true);
@@ -19,33 +20,53 @@ function AppContent() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowIntro(false);
-    }, 10000);
+    }, 6000);
+
     return () => clearTimeout(timer);
   }, []);
 
   if (showIntro) {
-    return <Intro />;
+    return <Intro onFinish={() => setShowIntro(false)} />;
   }
 
   return (
-    <BrowserRouter>
+    <div className="app-wrapper">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skill" element={<Skills />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+
+      <main className="app-content">
+        <motion.section
+          id="home"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Home />
+        </motion.section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="portfolio">
+          <Portfolio />
+        </section>
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+
+
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+
       <Footer />
-    </BrowserRouter>
-  );
-}
-export default function App() {
-  return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    </div>
   );
 }
 
+export default function App() {
+  return <AppContent />;
+}

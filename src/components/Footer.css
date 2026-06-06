@@ -1,107 +1,127 @@
-/* 🌌 FUTURISTIC FOOTER */
 .footer {
-    width: 100%;
-    background: rgba(15, 15, 20, 0.7);
-    backdrop-filter: blur(14px) saturate(180%);
-    -webkit-backdrop-filter: blur(14px);
-    padding: 24px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+
+    padding: 80px 20px 40px;
+
+    background: #070b14;
+
     overflow: hidden;
-    transition: background 0.3s ease, box-shadow 0.4s ease;
 }
 
-.footer:hover {
-    background: rgba(20, 20, 30, 0.85);
-    box-shadow: 0 -5px 30px rgba(0, 255, 255, 0.2);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    padding: 0 25px;
-    flex-wrap: wrap;
-}
-
-/* 🩵 Matn animatsiyasi */
-.footer .copyright,
-.footer h3 {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--accent-color);
-    position: relative;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-    transition: color 0.3s ease, text-shadow 0.4s ease;
-}
-
-.footer h3:hover {
-    color: #fff;
-    text-shadow: 0 0 12px var(--accent-color);
-}
-
-/* ⚙️ Social media icons */
-.social_media {
-    display: flex;
-    gap: 22px;
-}
-
-.social_media a.ic {
-    color: var(--accent-color);
-    font-size: 22px;
-    transition: all 0.35s ease;
-    text-decoration: none;
-    position: relative;
-}
-
-/* ✨ Neon hover va magnetic effect */
-.social_media a.ic::after {
-    content: "";
+/* BACKGROUND GLOW */
+.footer-bg {
     position: absolute;
     inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.12), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.12), transparent 40%);
+
+    z-index: 0;
 }
 
-.social_media a.ic:hover::after {
-    opacity: 0.5;
-    transform: scale(1.8);
+/* CONTAINER */
+.footer-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1100px;
+    margin: auto;
+
+    text-align: center;
 }
 
-.social_media a.ic:hover {
-    transform: translateY(-4px) scale(1.2);
-    color: #fff;
-    filter: drop-shadow(0 0 10px var(--accent-color));
+/* TITLE */
+.footer-title {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #f8fafc;
+
+    margin-bottom: 10px;
 }
 
-/* ⚡ Kichik puls bosilganda */
-.social_media a.ic:active {
-    transform: scale(0.9);
+/* SUB TEXT */
+.footer-sub {
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
 }
 
-/* 📱 Responsiv */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+/* SOCIALS */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.socials a {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #f8fafc;
+
+    font-size: 22px;
+
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    transform: translateY(-6px);
+
+    border-color: #d4af37;
+
+    color: #d4af37;
+
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+}
+
+/* LINE */
+.line {
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    margin: 25px 0;
+}
+
+/* COPYRIGHT */
+.copyright {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+.copyright span {
+    color: #d4af37;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .footer-title {
+        font-size: 22px;
     }
 
-    .footer h3 {
-        font-size: 14px;
-    }
-
-    .social_media a.ic {
-        font-size: 28px;
+    .socials a {
+        width: 46px;
+        height: 46px;
+        font-size: 20px;
     }
 }

@@ -1,47 +1,83 @@
-import React, { useEffect } from 'react';
-import './Intro.css';
-import { TypeAnimation } from 'react-type-animation';
-import Lottie from 'lottie-react';
-import devAnimation from '../assets/dev.json';
-import { useTheme } from '../context/ThemeContext';
+import React, { useEffect, useState } from "react";
+import "./Intro.css";
+import { TypeAnimation } from "react-type-animation";
+import Lottie from "lottie-react";
+import devAnimation from "../assets/dev.json";
+import { motion } from "framer-motion";
 
 export default function Intro() {
-    const { theme } = useTheme();
 
-    // ✅ Intro tugagandan keyin sahifa yuqoridan boshlansin
+    const [start, setStart] = useState(false);
+
     useEffect(() => {
-        // 10 soniyadan keyin Home default
+        window.scrollTo(0, 0);
+
+        // 🔥 kichik delay — intro “chiroyli ochiladi”
         const timer = setTimeout(() => {
-            window.scrollTo(0, 0); // sahifa yuqoridan boshlansin
-        }, 10000);
+            setStart(true);
+        }, 800);
 
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <section className={`intro-container ${theme === 'light' ? 'light' : ''}`}>
-            <div className="intro-content">
-                <div className="intro-left">
-                    <h1 className="intro-name">Adhamjon Sodiqov</h1>
-                    <TypeAnimation
-                        sequence={[
-                            'Frontend Developer',
-                            1500,
-                            'UI/UX Designer',
-                            1500,
-                            'Learning Backend Development',
-                            1500,
-                        ]}
-                        wrapper="span"
-                        speed={50}
-                        className="typing-text"
-                        repeat={Infinity}
-                    />
-                </div>
-                <div className="intro-right">
-                    <Lottie animationData={devAnimation} loop className="lottie-anim" />
-                </div>
+        <section className="intro">
+
+            <div className="intro-bg"></div>
+
+            <div className="intro-container">
+
+                {/* LEFT */}
+                <motion.div
+                    className="intro-left"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={start ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+
+                    <h1 className="intro-name">
+                        Adhamjon Sodiqov
+                    </h1>
+
+                    {start && (
+                        <TypeAnimation
+                            sequence={[
+                                "Frontend Developer",
+                                2000,
+                                "React Specialist",
+                                2000,
+                                "UI/UX Enthusiast",
+                                2000,
+                            ]}
+                            speed={60}
+                            repeat={Infinity}
+                            className="intro-type"
+                        />
+                    )}
+
+                    <p className="intro-desc">
+                        Zamonaviy, tezkor va chiroyli web interfeyslar yaratadigan frontend developer.
+                        React asosida real loyihalar ustida ishlayman.
+                    </p>
+
+                </motion.div>
+
+                {/* RIGHT */}
+                <motion.div
+                    className="intro-right"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={start ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 1 }}
+                >
+
+                    <div className="intro-animation">
+                        <Lottie animationData={devAnimation} loop />
+                    </div>
+
+                </motion.div>
+
             </div>
+
         </section>
     );
 }
