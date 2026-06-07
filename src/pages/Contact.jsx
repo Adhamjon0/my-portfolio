@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { motion } from "framer-motion";
-
 import avatar from "../pages/photos/avatar.jpg";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 import {
     BiLogoInstagram,
@@ -15,38 +16,98 @@ import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 
 export default function Contact() {
 
+    const sendToTelegram = async (data) => {
+        const token = process.env.REACT_APP_BOT_TOKEN;
+        const chat_id = process.env.REACT_APP_CHAT_ID;
+
+
+        console.log("TOKEN:", process.env.REACT_APP_BOT_TOKEN);
+        console.log("CHAT:", process.env.REACT_APP_CHAT_ID);
+
+        const message = `
+    📩 Yangi xabar!
+
+    👤 Ism: ${data.name}
+    📧 Email: ${data.email}
+    📱 Telefon: ${data.number}
+    💬 Xabar: ${data.message}
+    `;
+
+        try {
+            const res = await fetch(
+                `https://api.telegram.org/bot${token}/sendMessage`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        chat_id: chat_id,
+                        text: message,
+                    }),
+                }
+            );
+
+            return res.ok;
+        } catch (error) {
+            console.log("Telegram error:", error);
+            return false;
+        }
+    };
+
     const [form, setForm] = useState({
         name: "",
         email: "",
-        subject: "",
+        number: "",
         message: "",
     });
 
     const [status, setStatus] = useState("");
 
-    const handleSubmit = (e) => {
+    const [errors, setErrors] = useState({});
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!form.name || !form.email || !form.subject || !form.message) {
+        let newErrors = {};
+
+        if (!form.name) newErrors.name = "Ism kiritilmagan";
+        if (!form.email) newErrors.email = "Email kiritilmagan";
+        if (!form.number) newErrors.number = "Telefon kiritilmagan";
+        if (!form.message) newErrors.message = "Xabar kiritilmagan";
+
+        setErrors(newErrors);
+
+        if (Object.keys(newErrors).length > 0) {
             setStatus("error");
             return;
         }
 
-        setStatus("success");
+        const success = await sendToTelegram(form);
 
-        setForm({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-        });
+        if (success) {
+            setStatus("success");
+            setErrors({});
+
+            setForm({
+                name: "",
+                email: "",
+                number: "",
+                message: "",
+            });
+
+            // 🔥 ALERT QO‘SHILDI
+            alert("✅ Xabaringiz muvaffaqiyatli yuborildi!");
+        } else {
+            setStatus("error");
+
+            alert("❌ Xabar yuborilmadi, qayta urinib ko‘ring!");
+        }
     };
 
     return (
         <section className="contact" id="contact">
-
             <div className="contact-bg"></div>
-
             {/* TITLE */}
             <motion.div
                 className="contact-title"
@@ -54,7 +115,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <h1>📩 Aloqa sahifasi</h1>
+                <h1>📩 Men bilan bog'laning</h1>
                 <p>🚀 Loyihangiz bormi? Birga yaratamiz</p>
             </motion.div>
 
@@ -128,39 +189,61 @@ export default function Contact() {
 
                         <label>👤 Ismingiz</label>
                         <input
-                            placeholder="Adhamjon"
+                            className={errors.name ? "input-error" : ""}
+                            placeholder="To'liq ismingiz"
                             value={form.name}
                             onChange={(e) =>
                                 setForm({ ...form, name: e.target.value })
                             }
                         />
+                        {errors.name && (
+                            <small className="error-text">{errors.name}</small>
+                        )}
 
                         <label>📧 Email</label>
                         <input
-                            placeholder="example@gmail.com"
+                            className={errors.email ? "input-error" : ""}
+                            placeholder="Email manzilingiz"
                             value={form.email}
                             onChange={(e) =>
                                 setForm({ ...form, email: e.target.value })
                             }
                         />
+                        {errors.email && (
+                            <small className="error-text">{errors.email}</small>
+                        )}
 
-                        <label>📌 Mavzu</label>
-                        <input
-                            placeholder="Loyiha haqida..."
-                            value={form.subject}
-                            onChange={(e) =>
-                                setForm({ ...form, subject: e.target.value })
-                            }
-                        />
+                        <label>📌 Telefon raqam</label>
+
+                        <div className={errors.number ? "input-error" : ""}>
+                            <PhoneInput
+                                defaultCountry="uz"
+                                value={form.number}
+                                onChange={(phone) =>
+                                    setForm({
+                                        ...form,
+                                        number: phone,
+                                    })
+                                }
+                            />
+                        </div>
+
+                        {errors.number && (
+                            <small className="error-text">{errors.number}</small>
+                        )}
 
                         <label>💬 Xabar</label>
                         <textarea
+                            className={errors.message ? "input-error" : ""}
                             placeholder="O‘z fikringizni yozing..."
                             value={form.message}
                             onChange={(e) =>
                                 setForm({ ...form, message: e.target.value })
                             }
                         />
+                        {errors.message && (
+                            <small className="error-text">{errors.message}</small>
+                        )}
 
                         <button type="submit">
                             🚀 Yuborish

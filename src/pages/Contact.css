@@ -224,6 +224,127 @@ button:hover {
     color: #22c55e;
 }
 
+/* ================= PHONE INPUT ================= */
+
+.react-international-phone-input-container {
+    width: 100%;
+}
+
+.react-international-phone-country-selector-button {
+    height: 56px !important;
+    padding: 0 16px !important;
+
+    background: rgba(0, 0, 0, 0.4) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-right: none !important;
+
+    border-radius: 14px 0 0 14px !important;
+
+    transition: 0.3s !important;
+}
+
+.react-international-phone-country-selector-button:hover {
+    border-color: #d4af37 !important;
+}
+
+.react-international-phone-input {
+    width: 100% !important;
+    height: 56px !important;
+
+    background: rgba(0, 0, 0, 0.4) !important;
+
+    color: #fff !important;
+    font-size: 15px !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+
+    border-radius: 0 14px 14px 0 !important;
+
+    outline: none !important;
+}
+
+.react-international-phone-input:focus {
+    border-color: #d4af37 !important;
+}
+
+.react-international-phone-country-selector-dropdown {
+    background: #07111f !important;
+
+    color: #fff !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+
+    border-radius: 14px !important;
+}
+
+.react-international-phone-country-selector-dropdown__list-item:hover {
+    background: rgba(212, 175, 55, 0.15) !important;
+}
+
+/* ===== ERROR BORDER ===== */
+
+.input-error input,
+.input-error textarea,
+.input-error .react-international-phone-input,
+.input-error .react-international-phone-country-selector-button {
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5) !important;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+/* agar input to‘g‘ridan-to‘g‘ri class olsa */
+input.input-error,
+textarea.input-error {
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* smooth effect */
+input,
+textarea,
+.react-international-phone-input {
+    transition: 0.3s ease;
+}
+
+.error-text {
+    color: #ef4444;
+    /* qizil */
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+    font-weight: 500;
+
+    /* chiroyli effect */
+    text-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+
+    animation: shake 0.2s ease-in-out;
+}
+
+/* ===== PHONE INPUT ERROR FIX ===== */
+
+.input-error .react-international-phone-input {
+    border: 1px solid #ef4444 !important;
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5) !important;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.input-error .react-international-phone-country-selector-button {
+    border: 1px solid #ef4444 !important;
+    background: rgba(239, 68, 68, 0.05);
+}
+
+/* input ichidagi field ham */
+.input-error input {
+    border: 1px solid #ef4444 !important;
+}
+
+/* smooth effect */
+.react-international-phone-input,
+.react-international-phone-country-selector-button {
+    transition: 0.25s ease;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 435px) {
@@ -233,12 +354,13 @@ button:hover {
         gap: 30px;
 
         /* 🔥 mobile padding fix */
-        padding: 0 10px;
+        padding: 0 0px;
     }
 
     .contact-card,
     .contact-form {
-        padding: 35px 25px;
+        padding: 25px;
+
     }
 
     .contact-title h1 {
