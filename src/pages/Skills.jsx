@@ -9,11 +9,9 @@ export default function Skills() {
         { name: "CSS", value: 90 },
         { name: "JavaScript", value: 80 },
         { name: "React", value: 75 },
-        { name: "C#", value: 60 },
-        { name: "Python", value: 50 },
-        { name: "Java", value: 20 },
-        { name: "SQL", value: 30 },
-        { name: "Git", value: 50 },
+        { name: "C#", value: 40 },
+        { name: "Python", value: 20 },
+        { name: "AI", value: 60 },
     ];
 
     return (

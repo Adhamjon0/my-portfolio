@@ -347,7 +347,7 @@ textarea,
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 435px) {
+@media (max-width: 450px) {
 
     .contact-container {
         grid-template-columns: 1fr;
