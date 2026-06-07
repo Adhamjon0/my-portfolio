@@ -1,28 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { useTranslation } from "react-i18next";
 import "./Header.css";
 
 export default function Header() {
-    const { i18n } = useTranslation();
-
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState("home");
 
-    const navItems = [
+    // NAV ITEMS (stable)
+    const navItems = React.useMemo(() => [
         { id: "home", label: "Home" },
         { id: "about", label: "About" },
         { id: "portfolio", label: "Portfolio" },
         { id: "skills", label: "Skills" },
         { id: "contact", label: "Contact" },
-    ];
-
-    const langs = [
-        { code: "en", label: "EN" },
-        { code: "uz", label: "UZ" },
-        { code: "ru", label: "RU" },
-        { code: "fr", label: "FR" },
-    ];
+    ], []);
 
     const scrollToSection = (id) => {
         const el = document.getElementById(id);
@@ -34,11 +25,11 @@ export default function Header() {
         setMenuOpen(false);
     };
 
-    // 🔥 AUTO ACTIVE SCROLL TRACKING
+    // ACTIVE SECTION TRACKING
     useEffect(() => {
-        const sections = navItems.map((item) =>
-            document.getElementById(item.id)
-        );
+        const sections = navItems
+            .map((item) => document.getElementById(item.id))
+            .filter(Boolean);
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -50,20 +41,16 @@ export default function Header() {
             },
             {
                 root: null,
-                threshold: 0.55, // 55% ko‘rinsa active bo‘ladi
+                threshold: 0.55,
             }
         );
 
-        sections.forEach((sec) => {
-            if (sec) observer.observe(sec);
-        });
+        sections.forEach((sec) => observer.observe(sec));
 
         return () => {
-            sections.forEach((sec) => {
-                if (sec) observer.unobserve(sec);
-            });
+            sections.forEach((sec) => observer.unobserve(sec));
         };
-    }, []);
+    }, [navItems]);
 
     return (
         <header className="header">
@@ -77,7 +64,6 @@ export default function Header() {
                 {/* NAV */}
                 <nav className={`nav ${menuOpen ? "active" : ""}`}>
                     <ul>
-
                         {navItems.map((item) => (
                             <li key={item.id}>
                                 <button
@@ -88,33 +74,24 @@ export default function Header() {
                                 </button>
                             </li>
                         ))}
-
-                        {/* LANGUAGE */}
-                        <li className="lang-item">
-                            <select
-                                value={i18n.language}
-                                onChange={(e) => i18n.changeLanguage(e.target.value)}
-                            >
-                                {langs.map((l) => (
-                                    <option key={l.code} value={l.code}>
-                                        {l.label}
-                                    </option>
-                                ))}
-                            </select>
-                        </li>
-
                     </ul>
                 </nav>
 
                 {/* MENU ICON */}
-                <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+                <div
+                    className="menu-icon"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
                     {menuOpen ? <FiX /> : <FiMenu />}
                 </div>
 
             </div>
 
             {menuOpen && (
-                <div className="overlay" onClick={() => setMenuOpen(false)} />
+                <div
+                    className="overlay"
+                    onClick={() => setMenuOpen(false)}
+                />
             )}
         </header>
     );
