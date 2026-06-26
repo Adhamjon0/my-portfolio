@@ -1,51 +1,83 @@
 {
     "header": {
-        "about": "À propos de moi",
-        "portfolio": "Mon portfolio",
-        "skills": "Mes compétences",
-        "contact": "Contactez-moi"
+        "home": "Accueil",
+        "about": "À propos",
+        "portfolio": "Portfolio",
+        "skills": "Compétences",
+        "contact": "Contact"
     },
-    "footer": {
-        "portfolio": "Mon portfolio. Tous droits réservés.",
-        "motivation": "Continuez d’avancer. Le meilleur est à venir."
+    "home.downloadCV": "Télécharger le CV",
+    "home": {
+        "tag1": "Développeur Frontend",
+        "tag2": "Futur entrepreneur",
+        "title": "Bonjour, je suis Adhamjon 👋",
+        "description": "Je développe des interfaces web modernes et rapides. Je crée des solutions UI/UX élégantes avec React et JavaScript."
     },
     "about": {
-        "title": "À Propos de Moi",
-        "p1": "Je suis Sodiqov Adhamjon G'ayratovich, un développeur frontend passionné basé à Samarcande, en Ouzbékistan.",
-        "p2": "J'ai commencé mon parcours en développement web en apprenant React, HTML, CSS et JavaScript, construisant progressivement une base solide pour les applications web modernes.",
-        "p3": "Actuellement, je me concentre sur la création d'interfaces propres, réactives et conviviales qui améliorent l'expérience utilisateur.",
-        "p4": "Je m'engage à écrire un code maintenable, à optimiser les performances et à livrer des projets de haute qualité.",
-        "p5": "Chaque projet que j'entreprends me fait progresser et me rapproche de mon objectif de devenir un développeur frontend compétent et innovant."
-    },
-    "contact": {
-        "title": "Contactez-moi",
-        "tittle2": "Merci de laisser vos coordonnées!",
-        "subtittle": "Veuillez laisser vos questions, suggestions ou propositions de collaboration!",
-        "phone": "Mon numéro de téléphone",
-        "telegram": "Mon Telegram",
-        "email": "Mon e-mail",
-        "address": "Mon adresse",
-        "firstName": "Prénom",
-        "lastName": "Nom de famille",
-        "phonePlaceholder": "Numéro de téléphone",
-        "emailPlaceholder": "E-mail",
-        "subject": "Sujet",
-        "message": "Message",
-        "send": "Envoyer",
-        "alert": "✅ Votre message a été envoyé avec succès !"
-    },
-    "home": {
-        "greeting": "Salut, je suis Adhamjon",
-        "description": "Un développeur frontend créant des expériences web modernes et réactives.",
-        "contact": "Contactez-moi via Telegram",
-        "downloadCV": "Télécharger mon CV"
+        "title": "À propos de moi ✨",
+        "card1": {
+            "title": "Développeur Frontend",
+            "desc": "Je crée des interfaces UI/UX modernes avec React, JavaScript, HTML et CSS."
+        },
+        "card2": {
+            "title": "Déterminé",
+            "desc": "Je m'efforce toujours de réaliser chaque projet avec la meilleure qualité."
+        },
+        "card3": {
+            "title": "Vision d'avenir",
+            "desc": "Créer des services numériques mondiaux en combinant l'informatique et le tourisme."
+        },
+        "story1": "Je suis Adhamjon Sodiqov, développeur frontend spécialisé dans la création d'interfaces web modernes.",
+        "story2": "Mon objectif est de créer des produits numériques professionnels offrant une expérience mémorable aux utilisateurs.",
+        "story3": "Je travaille sur des projets concrets avec React, JavaScript et le design UI/UX.",
+        "story4": "Grâce au projet « Adam Voyage », j'ai acquis de l'expérience en architecture produit et en systèmes de design.",
+        "story5": "Chaque projet représente une nouvelle opportunité de progresser.",
+        "story6": "Mon objectif principal est de créer une marque informatique reconnue dans le monde entier."
     },
     "portfolio": {
-        "projects": "Projets",
-        "uzum": "Marché Uzum"
+        "title": "Mes projets",
+        "subtitle": "Des expériences numériques créées pour le monde réel",
+        "viewProject": "Voir le projet",
+        "projects": {
+            "uzum": "Plateforme e-commerce pour l'achat et la vente de produits.",
+            "adamVoyage": "Plateforme de réservation et d'exploration de voyages.",
+            "telegram": "Application de messagerie en temps réel avec une interface moderne.",
+            "velora": "Expérience e-commerce moderne dédiée à la mode et au style de vie."
+        }
     },
     "skills": {
-        "title": "Mes compétences"
+        "title": "Mes competences ⚡"
     },
-    "Dowonload CV": "Télécharger mon CV"
+    "contact": {
+        "title": "📩 Contactez-moi",
+        "subtitle": "🚀 Vous avez un projet ? Créons-le ensemble.",
+        "role": "Développeur Frontend • Designer UI/UX",
+        "location": "Samarcande, Ouzbékistan",
+        "formTitle": "📬 Me contacter",
+        "formSubtitle": "✨ Envoyez-moi un message, je vous répondrai rapidement.",
+        "statusError": "⚠️ Veuillez remplir tous les champs.",
+        "statusSuccess": "✅ Votre message a été envoyé.",
+        "name": "👤 Votre nom",
+        "email": "📧 Email",
+        "phone": "📌 Numéro de téléphone",
+        "message": "💬 Message",
+        "namePlaceholder": "Entrez votre nom complet",
+        "emailPlaceholder": "Entrez votre adresse e-mail",
+        "messagePlaceholder": "Écrivez votre message...",
+        "send": "Envoyer",
+        "alertSuccess": "✅ Votre message a été envoyé avec succès !",
+        "alertError": "❌ Échec de l'envoi du message. Veuillez réessayer.",
+        "errors": {
+            "name": "Le nom est requis",
+            "email": "L'e-mail est requis",
+            "phone": "Le numéro de téléphone est requis",
+            "message": "Le message est requis"
+        }
+    },
+    "intro": {
+        "type1": "Développeur Frontend",
+        "type2": "Spécialiste React",
+        "type3": "Passionné d'UI/UX",
+        "desc": "Je crée des interfaces web modernes, rapides et élégantes. Je développe des projets réels avec React."
+    }
 }

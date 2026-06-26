@@ -1,8 +1,11 @@
 import React from "react";
 import "./Skills.css";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Skills() {
+
+    const { t } = useTranslation();
 
     const skills = [
         { name: "HTML", value: 90 },
@@ -29,7 +32,7 @@ export default function Skills() {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true, amount: 0.3 }}
                 >
-                    Mening ko‘nikmalarim ⚡
+                    {t("skills.title")}
                 </motion.h2>
 
                 {/* GRID */}

@@ -1,51 +1,83 @@
 {
     "header": {
+        "home": "Bosh sahifa",
         "about": "Men haqimda",
-        "portfolio": "Mening portfoliom",
-        "skills": "Ko'nikmalarim",
-        "contact": "Bog‘lanish"
+        "portfolio": "Portfolio",
+        "skills": "Ko'nikmalar",
+        "contact": "Bog'lanish"
     },
-    "footer": {
-        "portfolio": "Mening portfoliom. Barcha huquqlar himoyalangan.",
-        "motivation": "Oldinga intiling. Eng zo‘ri hali oldinda."
+    "home.downloadCV": "CVni yuklab olish",
+    "home": {
+        "tag1": "Frontend Developer",
+        "tag2": "Kelajakdagi tadbirkor",
+        "title": "Salom, men Adhamjon 👋",
+        "description": "Zamonaviy va tezkor web interfeyslar yaratadigan frontend developer. React va JavaScript asosida chiroyli UI/UX yechimlar ustida ishlayman."
     },
     "about": {
-        "title": "Mening Haqimda",
-        "p1": "Men Sodiqov Adhamjon G'ayratovich, Samarqandda joylashgan ishtiyoqli frontend dasturchiman.",
-        "p2": "Men veb-dasturlash bo‘yicha React, HTML, CSS va JavaScriptni o‘rganishdan boshlab, zamonaviy veb-ilovalar uchun mustahkam asos yaratdim.",
-        "p3": "Hozirda men foydalanuvchi tajribasini oshiradigan, toza, moslashuvchan va qulay interfeyslar yaratishga e’tibor qaratmoqdaman.",
-        "p4": "Men har doim kodni oson boshqariladigan, samarali va yuqori sifatli loyihalarni taqdim qilishga intilaman.",
-        "p5": "Har bir loyiha meni rivojlantiradi va maqsadim — malakali va innovatsion frontend dasturchi bo‘lishga yaqinlashtiradi."
+        "title": "Men haqimda ✨",
+        "card1": {
+            "title": "Frontend Developer",
+            "desc": "React, JavaScript, HTML va CSS asosida zamonaviy UI/UX interfeyslar yarataman."
+        },
+        "card2": {
+            "title": "Maqsadli inson",
+            "desc": "Har bir loyihani mukammallik darajasiga olib chiqishga harakat qilaman."
+        },
+        "card3": {
+            "title": "Kelajak rejasi",
+            "desc": "IT va turizmni birlashtirib global raqamli xizmatlar yaratish."
+        },
+        "story1": "Men — Adhamjon Sodiqov, frontend developer sifatida zamonaviy web-interfeyslar yarataman.",
+        "story2": "Maqsadim — foydalanuvchilarda taassurot qoldiradigan professional raqamli mahsulotlar yaratish.",
+        "story3": "React, JavaScript va UI/UX dizayn yordamida haqiqiy loyihalar ustida ishlayman.",
+        "story4": "\"Adam Voyage\" loyihasi orqali mahsulot arxitekturasi va dizayn tizimlarini o'rgandim.",
+        "story5": "Har bir loyiha men uchun yangi tajriba va rivojlanish imkoniyatidir.",
+        "story6": "Kelajakdagi asosiy maqsadim — global IT brendini yaratish."
     },
-    "contact": {
-        "title": "Biz bilan bog‘laning!",
-        "tittle2": "Ma'lumotlaringnizni yuboring!",
-        "subtittle": "Savollaringiz, takliflaringiz yoki hamkorlik takliflaringizni qoldiring! ",
-        "phone": "Mening telefon raqamim",
-        "telegram": "Mening telegramim",
-        "email": "Mening elektron pochtam",
-        "address": "Manzilim",
-        "firstName": "Ism",
-        "lastName": "Familiya",
-        "phonePlaceholder": "Telefon raqamingiz",
-        "emailPlaceholder": "Email manzilingiz",
-        "subject": "Mavzu",
-        "message": "Xabar",
-        "send": "Yuborish",
-        "alert": "✅ Xabaringiz muvaffaqiyatli yuborildi!"
-    },
-    "home": {
-        "greeting": "Salom, men Adhamjonman",
-        "description": "Zamonaviy va moslashuvchan veb tajribalarni yaratadigan frontend dasturchi.",
-        "contact": "Telegram orqali bog‘laning",
-        "downloadCV": "Mening CVimni yuklab oling"
-    },  
     "portfolio": {
-        "projects": "Loyihalar",
-        "uzum": "Uzum Market"
+        "title": "My Projects",
+        "subtitle": "Digital experiences built for the real world",
+        "viewProject": "View Project",
+        "projects": {
+            "uzum": "E-commerce platform for buying and selling products.",
+            "adamVoyage": "Travel booking and exploration platform.",
+            "telegram": "Real-time messaging application with a modern user interface.",
+            "velora": "Modern fashion and lifestyle e-commerce experience."
+        }
     },
     "skills": {
-        "title": "Ko'nikmalarim"
+        "title": "Mening ko'nikmalarim ⚡"
     },
-    "Download CV": "Mening rezyumemni yuklab oling"
+    "contact": {
+        "title": "📩 Men bilan bog'laning",
+        "subtitle": "🚀 Loyihangiz bormi? Birga yaratamiz",
+        "role": "Frontend Developer • UI/UX Designer",
+        "location": "Samarqand, O'zbekiston",
+        "formTitle": "📬 Men bilan bog'laning",
+        "formSubtitle": "✨ Xabar yuboring — tezda javob beraman",
+        "statusError": "⚠️ Barcha maydonlarni to'ldiring",
+        "statusSuccess": "✅ Xabaringiz yuborildi",
+        "name": "👤 Ismingiz",
+        "email": "📧 Email",
+        "phone": "📌 Telefon raqami",
+        "message": "💬 Xabar",
+        "namePlaceholder": "To'liq ismingiz",
+        "emailPlaceholder": "Email manzilingiz",
+        "messagePlaceholder": "O'z fikringizni yozing...",
+        "send": "Yuborish",
+        "alertSuccess": "✅ Xabaringiz muvaffaqiyatli yuborildi!",
+        "alertError": "❌ Xabar yuborilmadi, qayta urinib ko'ring!",
+        "errors": {
+            "name": "Ism kiritilmagan",
+            "email": "Email kiritilmagan",
+            "phone": "Telefon kiritilmagan",
+            "message": "Xabar kiritilmagan"
+        }
+    },
+    "intro": {
+        "type1": "Frontend Developer",
+        "type2": "React Mutaxassisi",
+        "type3": "UI/UX Ishqibozi",
+        "desc": "Zamonaviy, tezkor va chiroyli web interfeyslar yaratadigan frontend developer. React asosida real loyihalar ustida ishlayman."
+    }
 }

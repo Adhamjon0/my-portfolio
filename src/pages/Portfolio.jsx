@@ -1,6 +1,7 @@
 import React from "react";
 import "./Portfolio.css";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import uzumMarket from "../pages/photos/uzum.jpg";
 import samtourImg from "../pages/photos/reg.jpg";
@@ -9,28 +10,30 @@ import tg from "../pages/photos/tg.webp";
 
 export default function Portfolio() {
 
+    const { t } = useTranslation();
+
     const projects = [
         {
             name: "Uzum Market",
-            description: "E-commerce platform for buying and selling products.",
+            description: t("portfolio.projects.uzum"),
             img: uzumMarket,
             link: "https://uzum-market-psi.vercel.app/"
         },
         {
             name: "Adam Voyage",
-            description: "Travel booking & exploration platform.",
+            description: t("portfolio.projects.adamVoyage"),
             img: samtourImg,
             link: "https://samtour.vercel.app/"
         },
         {
             name: "Telegram Clone",
-            description: "Real-time messaging app with modern UI.",
+            description: t("portfolio.projects.telegram"),
             img: tg,
             link: "https://telegram-app-eosin.vercel.app/"
         },
         {
             name: "Velora",
-            description: "Modern fashion & lifestyle e-commerce experience.",
+            description: t("portfolio.projects.velora"),
             img: velora,
             link: "https://velora-plum-one.vercel.app/#gallery"
         }
@@ -51,8 +54,8 @@ export default function Portfolio() {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true, amount: 0.3 }}
                 >
-                    <h1>Mening loyihalarim</h1>
-                    <p>Real dunyo uchun yaratilgan digital tajribalar</p>
+                    <h1>{t("portfolio.title")}</h1>
+                    <p>{t("portfolio.subtitle")}</p>
                 </motion.div>
 
                 {/* GRID */}
@@ -96,7 +99,7 @@ export default function Portfolio() {
                                 <p>{project.description}</p>
 
                                 <div className="card-footer">
-                                    <span>View Project</span>
+                                    <span>{t("portfolio.viewProject")}</span>
                                     <span className="arrow">→</span>
                                 </div>
                             </div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import avatar from "../pages/photos/avatar.jpg";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-
+import { useTranslation } from "react-i18next";
 import {
     BiLogoInstagram,
     BiLogoWhatsapp,
@@ -15,6 +15,7 @@ import {
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 
 export default function Contact() {
+    const { t } = useTranslation();
 
     const sendToTelegram = async (data) => {
         const token = process.env.REACT_APP_BOT_TOKEN;
@@ -71,10 +72,17 @@ export default function Contact() {
 
         let newErrors = {};
 
-        if (!form.name) newErrors.name = "Ism kiritilmagan";
-        if (!form.email) newErrors.email = "Email kiritilmagan";
-        if (!form.number) newErrors.number = "Telefon kiritilmagan";
-        if (!form.message) newErrors.message = "Xabar kiritilmagan";
+        if (!form.name)
+            newErrors.name = t("contact.errors.name");
+
+        if (!form.email)
+            newErrors.email = t("contact.errors.email");
+
+        if (!form.number)
+            newErrors.number = t("contact.errors.phone");
+
+        if (!form.message)
+            newErrors.message = t("contact.errors.message");
 
         setErrors(newErrors);
 
@@ -97,11 +105,11 @@ export default function Contact() {
             });
 
             // 🔥 ALERT QO‘SHILDI
-            alert("✅ Xabaringiz muvaffaqiyatli yuborildi!");
+            alert(t("contact.alertSuccess"));
         } else {
             setStatus("error");
 
-            alert("❌ Xabar yuborilmadi, qayta urinib ko‘ring!");
+            alert(t("contact.alertError"));
         }
     };
 
@@ -115,8 +123,8 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <h1>📩 Men bilan bog'laning</h1>
-                <p>🚀 Loyihangiz bormi? Birga yaratamiz</p>
+                <h1>{t("contact.title")}</h1>
+                <p>{t("contact.subtitle")}</p>
             </motion.div>
 
             <div className="contact-container">
@@ -134,8 +142,9 @@ export default function Contact() {
                     </div>
 
                     <h2 className="name">✨ Adhamjon Sodiqov</h2>
-                    <p className="role">🚀 Frontend Developer • UI/UX Designer</p>
-
+                    <p className="role">
+                        🚀 {t("contact.role")}
+                    </p>
                     <div className="info">
 
                         <p><MdEmail /> adhamjonsodiqov03@gmail.com</p>
@@ -174,23 +183,28 @@ export default function Contact() {
                     transition={{ duration: 0.7 }}
                 >
 
-                    <h1>📬 Men bilan bog‘laning</h1>
-                    <p className="sub">✨ Xabar yuboring — tezda javob beraman</p>
+                    <h1>{t("contact.formTitle")}</h1>
+                    <p className="sub">{t("contact.formSubtitle")}</p>
 
                     {status === "error" && (
-                        <p className="error">⚠️ Barcha maydonlarni to‘ldiring</p>
+                        <p className="error">
+                            {t("contact.statusError")}
+                        </p>
                     )}
 
                     {status === "success" && (
-                        <p className="success">✅ Xabaringiz yuborildi</p>
+                        <p className="success">
+                            {t("contact.statusSuccess")}
+                        </p>
                     )}
 
                     <form onSubmit={handleSubmit}>
 
-                        <label>👤 Ismingiz</label>
+                        <label>{t("contact.name")}</label>
+
                         <input
                             className={errors.name ? "input-error" : ""}
-                            placeholder="To'liq ismingiz"
+                            placeholder={t("contact.namePlaceholder")}
                             value={form.name}
                             onChange={(e) =>
                                 setForm({ ...form, name: e.target.value })
@@ -200,10 +214,11 @@ export default function Contact() {
                             <small className="error-text">{errors.name}</small>
                         )}
 
-                        <label>📧 Email</label>
+                        <label>{t("contact.email")}</label>
+
                         <input
                             className={errors.email ? "input-error" : ""}
-                            placeholder="Email manzilingiz"
+                            placeholder={t("contact.emailPlaceholder")}
                             value={form.email}
                             onChange={(e) =>
                                 setForm({ ...form, email: e.target.value })
@@ -213,7 +228,7 @@ export default function Contact() {
                             <small className="error-text">{errors.email}</small>
                         )}
 
-                        <label>📌 Telefon raqam</label>
+                        <label>{t("contact.phone")}</label>
 
                         <div className={errors.number ? "input-error" : ""}>
                             <PhoneInput
@@ -232,10 +247,11 @@ export default function Contact() {
                             <small className="error-text">{errors.number}</small>
                         )}
 
-                        <label>💬 Xabar</label>
+                        <label>{t("contact.message")}</label>
+
                         <textarea
                             className={errors.message ? "input-error" : ""}
-                            placeholder="O‘z fikringizni yozing..."
+                            placeholder={t("contact.messagePlaceholder")}
                             value={form.message}
                             onChange={(e) =>
                                 setForm({ ...form, message: e.target.value })
@@ -246,7 +262,7 @@ export default function Contact() {
                         )}
 
                         <button type="submit">
-                            🚀 Yuborish
+                            🚀 {t("contact.send")}
                         </button>
 
                     </form>

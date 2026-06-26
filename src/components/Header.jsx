@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import "./Header.css";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState("home");
+    const { t, i18n } = useTranslation();
 
     // NAV ITEMS (stable)
-    const navItems = React.useMemo(() => [
-        { id: "home", label: "Home" },
-        { id: "about", label: "About" },
-        { id: "portfolio", label: "Portfolio" },
-        { id: "skills", label: "Skills" },
-        { id: "contact", label: "Contact" },
-    ], []);
-
+    const navItems = React.useMemo(
+        () => [
+            { id: "home", label: t("header.home") },
+            { id: "about", label: t("header.about") },
+            { id: "portfolio", label: t("header.portfolio") },
+            { id: "skills", label: t("header.skills") },
+            { id: "contact", label: t("header.contact") },
+        ],
+        [t]
+    );
     const scrollToSection = (id) => {
         const el = document.getElementById(id);
 
@@ -75,6 +79,21 @@ export default function Header() {
                             </li>
                         ))}
                     </ul>
+
+                    {/* LANGUAGE SELECT */}
+                    <div className="lang-item">
+                        <select
+                            value={i18n.language}
+                            onChange={(e) => {
+                                i18n.changeLanguage(e.target.value);
+                            }}
+                        >
+                            <option value="uz">🇺🇿 UZ</option>
+                            <option value="en">🇺🇸 EN</option>
+                            <option value="fr">🇫🇷 FR</option>
+                            <option value="ru">🇷🇺 RU</option>
+                        </select>
+                    </div>
                 </nav>
 
                 {/* MENU ICON */}

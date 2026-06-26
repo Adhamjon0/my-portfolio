@@ -1,51 +1,83 @@
 {
     "header": {
-        "about": "About me",
-        "portfolio": "My portfolio",
-        "skills": "My skills",
-        "contact": "Contact me"
+        "home": "Home",
+        "about": "About",
+        "portfolio": "Portfolio",
+        "skills": "Skills",
+        "contact": "Contact"
     },
-    "footer": {
-        "portfolio": "My portfolio. All rights reserved.",
-        "motivation": "Keep pushing forward. Your best is yet to come."
+    "home.downloadCV": "Download My CV",
+    "home": {
+        "tag1": "Frontend Developer",
+        "tag2": "Future Entrepreneur",
+        "title": "Hello, I'm Adhamjon 👋",
+        "description": "I build modern and high-performance web interfaces. I specialize in creating beautiful UI/UX solutions using React and JavaScript."
     },
     "about": {
-        "title": "About Me",
-        "p1": "I'm Sodiqov Adhamjon G'ayratovich, a passionate frontend developer based in Samarkand, Uzbekistan.",
-        "p2": "I started my journey in web development by learning React, HTML, CSS, and JavaScript, gradually building a solid foundation for modern web applications.",
-        "p3": "Currently, I focus on crafting clean, responsive, and user-friendly interfaces that enhance the user experience.",
-        "p4": "I am dedicated to writing maintainable code, optimizing performance, and delivering high-quality projects.",
-        "p5": "Each project I undertake helps me grow and brings me closer to my goal of becoming a skilled and innovative frontend developer."
-    },
-    "contact": {
-        "title": "Contact me",
-        "tittle2": "Let's get in touch!",
-        "subtittle": "Please leave your questions, suggestions, or collaboration proposals!",
-        "phone": "Myphone number",
-        "telegram": "My telegram",
-        "email": "My email",
-        "address": "My address",
-        "firstName": "First Name",
-        "lastName": "Last Name",
-        "phonePlaceholder": "Phone Number",
-        "emailPlaceholder": "Email",
-        "subject": "Subject",
-        "message": "Message",
-        "send": "Send",
-        "alert": "✅ Your message has been sent successfully!"
-    },
-    "home": {
-        "greeting": "Hi, I'm Adhamjon",
-        "description": "A frontend developer crafting modern and responsive web experiences.",
-        "contact": "Contact me via Telegram",
-        "downloadCV": "Download My CV"
+        "title": "About Me ✨",
+        "card1": {
+            "title": "Frontend Developer",
+            "desc": "I build modern UI/UX interfaces using React, JavaScript, HTML, and CSS."
+        },
+        "card2": {
+            "title": "Goal-Oriented",
+            "desc": "I always strive to deliver every project with the highest quality."
+        },
+        "card3": {
+            "title": "Future Vision",
+            "desc": "Building global digital services by combining IT and tourism."
+        },
+        "story1": "I'm Adhamjon Sodiqov, a frontend developer passionate about creating modern web interfaces.",
+        "story2": "My goal is to build professional digital products that create a memorable user experience.",
+        "story3": "I work on real-world projects using React, JavaScript, and UI/UX design.",
+        "story4": "Through the \"Adam Voyage\" project, I gained experience in product architecture and design systems.",
+        "story5": "Every project is a new opportunity for me to grow and improve.",
+        "story6": "My ultimate goal is to build a globally recognized IT brand."
     },
     "portfolio": {
-        "projects": "Projects",
-        "uzum": "Uzum Market"
+        "title": "My Projects",
+        "subtitle": "Digital experiences built for the real world",
+        "viewProject": "View Project",
+        "projects": {
+            "uzum": "E-commerce platform for buying and selling products.",
+            "adamVoyage": "Travel booking and exploration platform.",
+            "telegram": "Real-time messaging application with a modern user interface.",
+            "velora": "Modern fashion and lifestyle e-commerce experience."
+        }
     },
     "skills": {
-        "title": "My Skills"
+        "title": "My Skills ⚡"
     },
-    "Download CV": "Download CV"
+    "contact": {
+        "title": "📩 Contact Me",
+        "subtitle": "🚀 Have a project? Let's build it together.",
+        "role": "Frontend Developer • UI/UX Designer",
+        "location": "Samarkand, Uzbekistan",
+        "formTitle": "📬 Get In Touch",
+        "formSubtitle": "✨ Send me a message — I'll reply as soon as possible.",
+        "statusError": "⚠️ Please fill in all fields.",
+        "statusSuccess": "✅ Your message has been sent.",
+        "name": "👤 Your Name",
+        "email": "📧 Email",
+        "phone": "📌 Phone Number",
+        "message": "💬 Message",
+        "namePlaceholder": "Enter your full name",
+        "emailPlaceholder": "Enter your email address",
+        "messagePlaceholder": "Write your message...",
+        "send": "Send",
+        "alertSuccess": "✅ Your message was sent successfully!",
+        "alertError": "❌ Failed to send the message. Please try again.",
+        "errors": {
+            "name": "Name is required",
+            "email": "Email is required",
+            "phone": "Phone number is required",
+            "message": "Message is required"
+        }
+    },
+    "intro": {
+        "type1": "Frontend Developer",
+        "type2": "React Specialist",
+        "type3": "UI/UX Enthusiast",
+        "desc": "I create modern, fast, and beautiful web interfaces. I build real-world projects using React."
+    }
 }

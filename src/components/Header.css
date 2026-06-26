@@ -96,6 +96,10 @@
 
 /* ================= LANGUAGE SELECT ================= */
 .lang-item select {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
     padding: 8px 12px;
 
     border-radius: 10px;
@@ -158,11 +162,17 @@
     .menu-icon {
         display: block;
     }
-
+    
     .lang-item {
+        position: relative;
         margin-top: 20px;
+        margin-left: 50px;
+
+
     }
 
+    select {
+    }
     .nav {
         position: fixed;
         top: 0;

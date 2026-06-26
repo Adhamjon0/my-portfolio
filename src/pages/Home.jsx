@@ -1,11 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import "./Home.css";
 import img from "../pages/photos/adam-bmw.jpg";
 import CVButton from "../components/CVButton";
 import SectionReveal from "../components/SectionReveal";
 
 const Home = () => {
+
+    const { t } = useTranslation();
+
     return (
         <section className="home" id="home">
 
@@ -24,17 +28,16 @@ const Home = () => {
                     >
 
                         <div className="tags">
-                            <span>🚀 Frontend Developer</span>
-                            <span>🌍 Kelajakdagi tadbirkor</span>
+                            <span>🚀 {t("home.tag1")}</span>
+                            <span>🌍 {t("home.tag2")}</span>
                         </div>
 
                         <h1 className="title">
-                            Salom, men Adhamjon 👋
+                            {t("home.title")}
                         </h1>
 
                         <p className="desc">
-                            Zamonaviy va tezkor web interfeyslar yaratadigan frontend developer.
-                            React va JavaScript asosida chiroyli UI/UX yechimlar ustida ishlayman.
+                            {t("home.description")}
                         </p>
 
                         <div className="actions">

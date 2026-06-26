@@ -12,7 +12,6 @@ export default function Intro() {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-        // 🔥 kichik delay — intro “chiroyli ochiladi”
         const timer = setTimeout(() => {
             setStart(true);
         }, 800);
@@ -43,21 +42,24 @@ export default function Intro() {
                         <TypeAnimation
                             sequence={[
                                 "Frontend Developer",
-                                2000,
+                                500,
+
                                 "React Specialist",
-                                2000,
+                                500,
+
                                 "UI/UX Enthusiast",
-                                2000,
+                                500,
                             ]}
-                            speed={60}
+                            speed={55}
+                            deletionSpeed={80}
                             repeat={Infinity}
                             className="intro-type"
                         />
                     )}
 
                     <p className="intro-desc">
-                        Zamonaviy, tezkor va chiroyli web interfeyslar yaratadigan frontend developer.
-                        React asosida real loyihalar ustida ishlayman.
+                        I create modern, fast, and beautiful web interfaces.
+                        I build real-world projects using React.
                     </p>
 
                 </motion.div>
@@ -71,7 +73,10 @@ export default function Intro() {
                 >
 
                     <div className="intro-animation">
-                        <Lottie animationData={devAnimation} loop />
+                        <Lottie
+                            animationData={devAnimation}
+                            loop
+                        />
                     </div>
 
                 </motion.div>
