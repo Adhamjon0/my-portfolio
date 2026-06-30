@@ -349,7 +349,7 @@ textarea,
 
 /* ================= 350px FIX ================= */
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
 
     .contact {
         padding: 90px 10px;

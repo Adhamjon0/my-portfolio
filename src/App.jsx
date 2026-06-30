@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import Intro from "./components/Intro";
+import Intro from "./components/Intro";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -26,7 +26,7 @@ function AppContent() {
   }, []);
 
   if (showIntro) {
-    // return <Intro onFinish={() => setShowIntro(false)} />;
+    return <Intro onFinish={() => setShowIntro(false)} />;
   }
 
   return (
