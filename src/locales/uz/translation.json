@@ -35,14 +35,14 @@
         "story6": "Kelajakdagi asosiy maqsadim — global IT brendini yaratish."
     },
     "portfolio": {
-        "title": "My Projects",
-        "subtitle": "Digital experiences built for the real world",
-        "viewProject": "View Project",
+        "title": "Mening loyihalarim",
+        "subtitle": "Haqiqiy dunyo uchun yaratilgan raqamli yechimlar",
+        "viewProject": "Loyihani ko'rish",
         "projects": {
-            "uzum": "E-commerce platform for buying and selling products.",
-            "adamVoyage": "Travel booking and exploration platform.",
-            "telegram": "Real-time messaging application with a modern user interface.",
-            "velora": "Modern fashion and lifestyle e-commerce experience."
+            "uzum": "Mahsulotlarni xarid qilish va sotish uchun elektron tijorat platformasi.",
+            "adamVoyage": "Sayohatlarni bron qilish va yangi manzillarni kashf etish platformasi.",
+            "telegram": "Zamonaviy foydalanuvchi interfeysiga ega real vaqt rejimidagi xabar almashish ilovasi.",
+            "velora": "Moda va turmush tarzi uchun zamonaviy elektron tijorat platformasi."
         }
     },
     "skills": {

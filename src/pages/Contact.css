@@ -347,23 +347,104 @@ textarea,
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 450px) {
+/* ================= 350px FIX ================= */
+
+@media (max-width: 350px) {
+
+    .contact {
+        padding: 90px 10px;
+    }
 
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 30px;
-
-        /* 🔥 mobile padding fix */
-        padding: 0 0px;
+        gap: 20px;
+        padding: 0;
     }
 
     .contact-card,
     .contact-form {
-        padding: 25px;
-
+        padding: 18px;
+        border-radius: 18px;
     }
 
     .contact-title h1 {
-        font-size: 30px;
+        font-size: 26px;
+    }
+
+    .contact-title p {
+        font-size: 14px;
+    }
+
+    .name {
+        font-size: 22px;
+        word-break: break-word;
+        text-align: center;
+    }
+
+    .role {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .avatar img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .info p {
+        padding: 12px;
+        gap: 10px;
+        font-size: 13px;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .info svg {
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .socials {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .socials a {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .contact-form h1 {
+        font-size: 24px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input,
+    textarea {
+        padding: 13px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        min-height: 110px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .react-international-phone-country-selector-button {
+        height: 48px !important;
+        padding: 0 10px !important;
+    }
+
+    .react-international-phone-input {
+        height: 48px !important;
+        font-size: 14px !important;
     }
 }
