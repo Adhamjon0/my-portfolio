@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "./Home.css";
 import img from "../pages/photos/adam-bmw.jpg";
-import CVButton from "../components/CVButton";
+// import CVButton from "../components/CVButton";
 import SectionReveal from "../components/SectionReveal";
 
 const Home = () => {
@@ -41,7 +41,7 @@ const Home = () => {
                         </p>
 
                         <div className="actions">
-                            <CVButton />
+                            {/* <CVButton /> */}
                         </div>
 
                     </motion.div>

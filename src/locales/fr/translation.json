@@ -39,10 +39,12 @@
         "subtitle": "Des expériences numériques créées pour le monde réel",
         "viewProject": "Voir le projet",
         "projects": {
-            "uzum": "Plateforme e-commerce pour l'achat et la vente de produits.",
+            "adamShop": "Plateforme e-commerce pour l'achat et la vente de produits.",
             "adamVoyage": "Plateforme de réservation et d'exploration de voyages.",
             "telegram": "Application de messagerie en temps réel avec une interface moderne.",
-            "velora": "Expérience e-commerce moderne dédiée à la mode et au style de vie."
+            "velora": "Expérience e-commerce moderne dédiée à la mode et au style de vie.",
+            "adamAvto": "Plateforme de reservation et de vente de voiture.",
+            "loginForm": "Formulaire de connexion."
         }
     },
     "skills": {

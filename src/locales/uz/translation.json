@@ -39,10 +39,12 @@
         "subtitle": "Haqiqiy dunyo uchun yaratilgan raqamli yechimlar",
         "viewProject": "Loyihani ko'rish",
         "projects": {
-            "uzum": "Mahsulotlarni xarid qilish va sotish uchun elektron tijorat platformasi.",
+            "adamShop": "Mahsulotlarni xarid qilish va sotish uchun elektron tijorat platformasi.",
             "adamVoyage": "Sayohatlarni bron qilish va yangi manzillarni kashf etish platformasi.",
             "telegram": "Zamonaviy foydalanuvchi interfeysiga ega real vaqt rejimidagi xabar almashish ilovasi.",
-            "velora": "Moda va turmush tarzi uchun zamonaviy elektron tijorat platformasi."
+            "velora": "Moda va turmush tarzi uchun zamonaviy elektron tijorat platformasi.",
+            "adamAvto": "Mashinalarni bron qilish va sotish uchun elektron tijorat platformasi.",
+            "loginForm": "Royxatdan otish formasi."
         }
     },
     "skills": {

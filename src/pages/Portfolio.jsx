@@ -3,7 +3,6 @@ import "./Portfolio.css";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-import uzumMarket from "../pages/photos/uzum.jpg";
 import samtourImg from "../pages/photos/reg.jpg";
 import velora from "../pages/photos/velor.png";
 import tg from "../pages/photos/tg.webp";
@@ -14,10 +13,10 @@ export default function Portfolio() {
 
     const projects = [
         {
-            name: "Uzum Market",
-            description: t("portfolio.projects.uzum"),
-            img: uzumMarket,
-            link: "https://uzum-market-psi.vercel.app/"
+            name: "Adam Shop",
+            description: t("portfolio.projects.adamShop"),
+            img: null,
+            link: "https://adam-shop-omega.vercel.app/"
         },
         {
             name: "Adam Voyage",
@@ -36,6 +35,18 @@ export default function Portfolio() {
             description: t("portfolio.projects.velora"),
             img: velora,
             link: "https://velora-plum-one.vercel.app/#gallery"
+        },
+        {
+            name: "Adam Avto",
+            description: t("portfolio.projects.adamAvto"),
+            img: null,
+            link: "https://adam-luxury-cars.vercel.app/"
+        },
+        {
+            name: "Login Form",
+            description: t("portfolio.projects.loginForm"),
+            img: null,
+            link: "https://login-system-five-drab.vercel.app/login"
         }
     ];
 

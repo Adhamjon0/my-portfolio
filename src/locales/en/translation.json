@@ -39,10 +39,12 @@
         "subtitle": "Digital experiences built for the real world",
         "viewProject": "View Project",
         "projects": {
-            "uzum": "E-commerce platform for buying and selling products.",
+            "adamShop": "E-commerce platform for buying and selling products.",
             "adamVoyage": "Travel booking and exploration platform.",
             "telegram": "Real-time messaging application with a modern user interface.",
-            "velora": "Modern fashion and lifestyle e-commerce experience."
+            "velora": "Modern fashion and lifestyle e-commerce experience.",
+            "adamAvto": "Car booking and sale platform.",
+            "loginForm": "Login form."
         }
     },
     "skills": {
