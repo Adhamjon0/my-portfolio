@@ -12,6 +12,12 @@ export default function Portfolio() {
     const { t } = useTranslation();
 
     const projects = [
+        // {
+        //     name: "Adam Voyage",
+        //     description: t("portfolio.projects.adamVoyage"),
+        //     img: samtourImg,
+        //     link: "https://samtour.vercel.app/"
+        // },
         {
             name: "Adam Shop",
             description: t("portfolio.projects.adamShop"),
@@ -19,16 +25,10 @@ export default function Portfolio() {
             link: "https://adam-shop-omega.vercel.app/"
         },
         {
-            name: "Adam Voyage",
-            description: t("portfolio.projects.adamVoyage"),
-            img: samtourImg,
-            link: "https://samtour.vercel.app/"
-        },
-        {
-            name: "Telegram Clone",
-            description: t("portfolio.projects.telegram"),
-            img: tg,
-            link: "https://telegram-app-eosin.vercel.app/"
+            name: "Adam Avto",
+            description: t("portfolio.projects.adamAvto"),
+            img: null,
+            link: "https://adam-luxury-cars.vercel.app/"
         },
         {
             name: "Velora",
@@ -37,10 +37,10 @@ export default function Portfolio() {
             link: "https://velora-plum-one.vercel.app/#gallery"
         },
         {
-            name: "Adam Avto",
-            description: t("portfolio.projects.adamAvto"),
-            img: null,
-            link: "https://adam-luxury-cars.vercel.app/"
+            name: "Telegram Clone",
+            description: t("portfolio.projects.telegram"),
+            img: tg,
+            link: "https://telegram-app-eosin.vercel.app/"
         },
         {
             name: "Login Form",
