@@ -3,7 +3,6 @@ import "./Portfolio.css";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-import samtourImg from "../pages/photos/reg.jpg";
 import velora from "../pages/photos/velor.png";
 import tg from "../pages/photos/tg.webp";
 
