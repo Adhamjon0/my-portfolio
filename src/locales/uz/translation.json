@@ -44,7 +44,8 @@
             "telegram": "Zamonaviy foydalanuvchi interfeysiga ega real vaqt rejimidagi xabar almashish ilovasi.",
             "velora": "Moda va turmush tarzi uchun zamonaviy elektron tijorat platformasi.",
             "adamAvto": "Mashinalarni bron qilish va sotish uchun elektron tijorat platformasi.",
-            "loginForm": "Royxatdan otish formasi."
+            "loginForm": "Royxatdan otish formasi.",
+            "adamEstate": "Ko'chmas mulkni sotish va ijaraga berish uchun elektron tijorat platformasi."
         }
     },
     "skills": {

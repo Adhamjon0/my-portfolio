@@ -47,6 +47,12 @@ export default function Portfolio() {
             description: t("portfolio.projects.loginForm"),
             img: null,
             link: "https://login-system-five-drab.vercel.app/login"
+        },
+        {
+            name: "Adam Estate",
+            description: t("portfolio.projects.adamEstate"),
+            img: null,
+            link: "https://adam-estate-khaki.vercel.app/"
         }
     ];
 
