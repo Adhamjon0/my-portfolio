@@ -11,12 +11,12 @@ export default function Portfolio() {
     const { t } = useTranslation();
 
     const projects = [
-        {
-            name: "Adam Voyage",
-            description: t("portfolio.projects.adamVoyage"),
-            img: null,
-            link: "https://samtour.vercel.app/"
-        },
+        // {
+        //     name: "Adam Voyage",
+        //     description: t("portfolio.projects.adamVoyage"),
+        //     img: null,
+        //     link: "https://samtour.vercel.app/"
+        // },
         {
             name: "Adam Shop",
             description: t("portfolio.projects.adamShop"),
@@ -47,6 +47,12 @@ export default function Portfolio() {
             description: t("portfolio.projects.adamEstate"),
             img: null,
             link: "https://adam-estate-khaki.vercel.app/"
+        },
+        {
+            nmae:" Weather App",
+            description: t("portfolio.projects.weather"),
+            img: null,
+            link: "https://adam-weather-sand.vercel.app/"
         },
         {
             name: "Telegram Clone",
