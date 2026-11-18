@@ -1,450 +1,490 @@
-/* ================= CONTACT ================= */
-
 .contact {
     position: relative;
-    min-height: 100vh;
-    padding: 140px 20px;
+    width: 100%;
+    padding: 110px 7%;
+    background: #080808;
     overflow: hidden;
 }
 
-/* BACKGROUND */
-.contact-bg {
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.15), transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(15, 76, 129, 0.25), transparent 40%),
-        #07111f;
-
-    z-index: 0;
-}
-
-/* TITLE */
-.contact-title {
-    text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-    z-index: 2;
-    padding: 0 15px;
-}
-
-.contact-title h1 {
-    font-size: 38px;
-    color: #fff;
-}
-
-.contact-title p {
-    color: #94a3b8;
-    margin-top: 8px;
-}
-
-/* ================= CONTAINER (FIXED SPACING) ================= */
-
 .contact-container {
-    position: relative;
-    z-index: 2;
-
     max-width: 1200px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-
-    gap: 45px;
-
-    /* 🔥 IMPORTANT: LEFT/RIGHT AIR */
-    padding: 0 20px;
+    margin: 0 auto;
 }
 
-/* ================= CARD ================= */
+/* HEADING */
+
+.contact-heading {
+    margin-bottom: 55px;
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 15px;
+    color: #d4af37;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.contact-heading h2 {
+    color: #fff;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.contact-heading h2 span {
+    color: #d4af37;
+}
+
+.contact-heading>p {
+    margin-top: 12px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* CONTENT */
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* CARDS */
 
 .contact-card,
 .contact-form {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(16px);
-
-    /* 🔥 FIX: ichki bo‘sh joy oshirildi */
-    padding: 50px 40px;
-
-    border-radius: 26px;
-
-    /* shadow bilan “floating” effect */
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    padding: 35px;
+    background: #101010;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
 }
 
-/* ================= AVATAR ================= */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+}
 
-.avatar img {
-    width: 140px;
-    height: 140px;
+/* PROFILE */
+
+.contact-profile {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-avatar {
+    width: 115px;
+    height: 115px;
+    margin: 0 auto 20px;
+    padding: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.65);
     border-radius: 50%;
-    border: 3px solid #d4af37;
 }
 
-/* NAME */
-.name {
-    margin-top: 18px;
-    font-size: 28px;
+.contact-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+}
+
+.contact-card:hover .contact-avatar img {
+    filter: grayscale(0%);
+}
+
+.contact-profile h3 {
     color: #fff;
+    font-size: 21px;
+    font-weight: 600;
 }
 
-.role {
-    color: #94a3b8;
-    margin-bottom: 25px;
+.contact-profile p {
+    margin-top: 8px;
+    color: #d4af37;
+    font-size: 13px;
 }
 
-/* ================= INFO ================= */
+/* CONTACT INFO */
 
-.info p {
+.contact-info {
     display: flex;
-    gap: 14px;
+    flex-direction: column;
+    gap: 22px;
+    padding: 30px 0;
+}
+
+.contact-info a,
+.contact-info div {
+    display: flex;
     align-items: center;
-
-    padding: 16px;
-    margin: 14px 0;
-
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 14px;
-
-    color: #cbd5e1;
-    font-size: 16px;
-
-    transition: 0.3s;
+    gap: 13px;
+    color: #aaa;
+    font-size: 13px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
 }
 
-.info p:hover {
-    transform: translateX(6px);
-    border: 1px solid #d4af37;
+.contact-info svg {
+    flex-shrink: 0;
+    color: #d4af37;
+    font-size: 19px;
 }
 
-.info svg {
-    font-size: 24px;
+.contact-info a:hover {
     color: #d4af37;
 }
 
-/* ================= SOCIAL ================= */
+/* SOCIALS */
 
-.socials {
+.contact-socials {
     display: flex;
+    gap: 11px;
+    margin-top: auto;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-socials a {
+    position: relative;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 18px;
-    margin-top: 30px;
-}
-
-.socials a {
-    font-size: 22px;
-    padding: 14px;
-
-    border-radius: 14px;
-
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-
-    transition: 0.3s;
-}
-
-.socials a:hover {
-    transform: translateY(-6px);
-    color: #d4af37;
-}
-
-/* ================= FORM ================= */
-
-.contact-form h1 {
-    color: #fff;
-    font-size: 30px;
-}
-
-.sub {
-    color: #94a3b8;
-    margin-bottom: 18px;
-}
-
-/* LABEL */
-label {
-    display: block;
-    margin: 12px 0 8px;
-    color: #e2e8f0;
-    font-size: 15px;
-}
-
-/* INPUT */
-input,
-textarea {
-    width: 100%;
-    padding: 16px;
-
-    border-radius: 14px;
-
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
-    color: #fff;
-    outline: none;
-
-    font-size: 15px;
-}
-
-/* TEXTAREA */
-textarea {
-    min-height: 140px;
-}
-
-/* BUTTON */
-button {
-    width: 100%;
-    margin-top: 18px;
-    padding: 16px;
-
-    background: linear-gradient(90deg, #d4af37, #f97316);
-    border: none;
-
-    font-weight: 700;
-    font-size: 16px;
-
-    border-radius: 14px;
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.03);
-}
-
-/* ================= STATUS ================= */
-
-.error {
-    color: #ef4444;
-}
-
-.success {
-    color: #22c55e;
-}
-
-/* ================= PHONE INPUT ================= */
-
-.react-international-phone-input-container {
-    width: 100%;
-}
-
-.react-international-phone-country-selector-button {
-    height: 56px !important;
-    padding: 0 16px !important;
-
-    background: rgba(0, 0, 0, 0.4) !important;
-
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-right: none !important;
-
-    border-radius: 14px 0 0 14px !important;
-
-    transition: 0.3s !important;
-}
-
-.react-international-phone-country-selector-button:hover {
-    border-color: #d4af37 !important;
-}
-
-.react-international-phone-input {
-    width: 100% !important;
-    height: 56px !important;
-
-    background: rgba(0, 0, 0, 0.4) !important;
-
-    color: #fff !important;
-    font-size: 15px !important;
-
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-
-    border-radius: 0 14px 14px 0 !important;
-
-    outline: none !important;
-}
-
-.react-international-phone-input:focus {
-    border-color: #d4af37 !important;
-}
-
-.react-international-phone-country-selector-dropdown {
-    background: #07111f !important;
-
-    color: #fff !important;
-
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-
-    border-radius: 14px !important;
-}
-
-.react-international-phone-country-selector-dropdown__list-item:hover {
-    background: rgba(212, 175, 55, 0.15) !important;
-}
-
-/* ===== ERROR BORDER ===== */
-
-.input-error input,
-.input-error textarea,
-.input-error .react-international-phone-input,
-.input-error .react-international-phone-country-selector-button {
-    border: 1px solid #ef4444 !important;
-    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5) !important;
-    background: rgba(239, 68, 68, 0.05);
-}
-
-/* agar input to‘g‘ridan-to‘g‘ri class olsa */
-input.input-error,
-textarea.input-error {
-    border: 1px solid #ef4444 !important;
-    box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
-}
-
-/* smooth effect */
-input,
-textarea,
-.react-international-phone-input {
+    width: 42px;
+    height: 42px;
+    color: #aaa;
+    background: #191919;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 9px;
+    font-size: 21px;
+    text-decoration: none;
     transition: 0.3s ease;
 }
 
-.error-text {
-    color: #ef4444;
-    /* qizil */
+.contact-socials a:hover {
+    color: #d4af37;
+    border-color: #d4af37;
+    transform: translateY(-4px);
+}
+
+.social-arrow {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 10px;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.contact-socials a:hover .social-arrow {
+    opacity: 1;
+}
+
+/* FORM */
+
+.contact-form h3 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.contact-form-sub {
+    margin: 9px 0 28px;
+    color: #888;
     font-size: 13px;
-    margin-top: 6px;
-    display: block;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #ddd;
+    font-size: 12px;
     font-weight: 500;
-
-    /* chiroyli effect */
-    text-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
-
-    animation: shake 0.2s ease-in-out;
 }
 
-/* ===== PHONE INPUT ERROR FIX ===== */
+/* ALL INPUTS */
 
-.input-error .react-international-phone-input {
-    border: 1px solid #ef4444 !important;
-    box-shadow: 0 0 14px rgba(239, 68, 68, 0.5) !important;
-    background: rgba(239, 68, 68, 0.05);
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 15px;
+    color: #fff;
+    background: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color 0.3s ease;
 }
 
-.input-error .react-international-phone-country-selector-button {
-    border: 1px solid #ef4444 !important;
-    background: rgba(239, 68, 68, 0.05);
+.form-group input {
+    height: 50px;
 }
 
-/* input ichidagi field ham */
-.input-error input {
-    border: 1px solid #ef4444 !important;
+.form-group textarea {
+    min-height: 125px;
+    resize: vertical;
 }
 
-/* smooth effect */
-.react-international-phone-input,
-.react-international-phone-country-selector-button {
-    transition: 0.25s ease;
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d4af37;
 }
 
-/* ================= RESPONSIVE ================= */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
 
-/* ================= 350px FIX ================= */
+/* PHONE INPUT - FULL DESIGN */
 
-@media (max-width: 400px) {
+.phone-wrapper {
+    width: 100%;
+    height: 50px;
+    background: #181818;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: visible;
+    transition: border-color 0.3s ease;
+}
 
-    .contact {
-        padding: 90px 10px;
+.phone-wrapper:focus-within {
+    border-color: #d4af37;
+}
+
+.phone-wrapper .react-international-phone-input-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* COUNTRY SELECTOR */
+
+.phone-wrapper .react-international-phone-country-selector {
+    height: 100%;
+}
+
+.phone-wrapper .react-international-phone-country-selector-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 100%;
+    min-width: 88px;
+    padding: 0 12px;
+    color: #fff;
+    background: #181818;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px 0 0 8px;
+    transition: background 0.3s ease;
+}
+
+.phone-wrapper .react-international-phone-country-selector-button:hover {
+    background: #222;
+}
+
+.phone-wrapper .react-international-phone-country-selector-button__flag-emoji {
+    font-size: 19px;
+}
+
+.phone-wrapper .react-international-phone-country-selector-button__dropdown-arrow {
+    color: #d4af37;
+}
+
+/* PHONE NUMBER FIELD */
+
+.phone-wrapper .react-international-phone-input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    padding: 0 15px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.phone-wrapper .react-international-phone-input:focus {
+    outline: none;
+}
+
+.phone-wrapper .react-international-phone-input::placeholder {
+    color: #666;
+}
+
+/* COUNTRY DROPDOWN */
+
+.phone-wrapper .react-international-phone-country-selector-dropdown {
+    z-index: 100;
+    min-width: 220px;
+    max-height: 250px;
+    margin-top: 8px;
+    color: #fff;
+    background: #181818;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.phone-wrapper .react-international-phone-country-selector-dropdown__list-item {
+    padding: 10px 12px;
+    color: #ddd;
+    font-size: 13px;
+    transition: background 0.2s ease;
+}
+
+.phone-wrapper .react-international-phone-country-selector-dropdown__list-item:hover,
+.phone-wrapper .react-international-phone-country-selector-dropdown__list-item--focused {
+    background: #292929;
+}
+
+.phone-wrapper .react-international-phone-country-selector-dropdown__list-item--selected {
+    color: #d4af37;
+    background: #242016;
+}
+
+.phone-wrapper .react-international-phone-country-selector-dropdown__list-item-dial-code {
+    color: #d4af37;
+}
+
+/* ERROR */
+
+.form-group small {
+    color: #e57373;
+    font-size: 11px;
+}
+
+.form-group .input-error,
+.phone-wrapper.input-error {
+    border-color: #e57373;
+}
+
+.contact-status {
+    margin-bottom: 18px;
+    font-size: 13px;
+}
+
+.contact-status.error {
+    color: #e57373;
+}
+
+.contact-status.success {
+    color: #8bc48b;
+}
+
+/* BUTTON */
+
+.contact-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+    color: #080808;
+    background: #d4af37;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-submit:hover {
+    color: #d4af37;
+    background: transparent;
+}
+
+.contact-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .contact-content {
+        grid-template-columns: 1fr;
     }
 
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0;
+    .contact-card {
+        min-height: auto;
+    }
+
+    .contact-socials {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 80px 5%;
+    }
+
+    .contact-heading {
+        margin-bottom: 35px;
+    }
+
+    .contact-heading h2 {
+        letter-spacing: -1px;
     }
 
     .contact-card,
     .contact-form {
-        padding: 18px;
-        border-radius: 18px;
+        padding: 25px 20px;
     }
 
-    .contact-title h1 {
-        font-size: 26px;
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
-    .contact-title p {
-        font-size: 14px;
-    }
-
-    .name {
-        font-size: 22px;
-        word-break: break-word;
-        text-align: center;
-    }
-
-    .role {
-        font-size: 14px;
-        text-align: center;
-    }
-
-    .avatar img {
-        width: 110px;
-        height: 110px;
-    }
-
-    .info p {
-        padding: 12px;
-        gap: 10px;
-        font-size: 13px;
-        word-break: break-word;
-        overflow-wrap: anywhere;
-    }
-
-    .info svg {
-        font-size: 18px;
-        flex-shrink: 0;
-    }
-
-    .socials {
-        gap: 10px;
+    .contact-socials {
         flex-wrap: wrap;
     }
+}
 
-    .socials a {
-        padding: 10px;
-        font-size: 18px;
-    }
+.phone-wrapper,
+.phone-wrapper .react-international-phone-input-container,
+.phone-wrapper .react-international-phone-country-selector-button,
+.phone-wrapper .react-international-phone-input {
+    background-color: #181818 !important;
+}
 
-    .contact-form h1 {
-        font-size: 24px;
-    }
+.phone-wrapper .react-international-phone-input {
+    color: #fff !important;
+    box-shadow: none !important;
+}
 
-    label {
-        font-size: 14px;
-    }
-
-    input,
-    textarea {
-        padding: 13px;
-        font-size: 14px;
-        box-sizing: border-box;
-    }
-
-    textarea {
-        min-height: 110px;
-    }
-
-    button {
-        padding: 14px;
-        font-size: 15px;
-    }
-
-    .react-international-phone-country-selector-button {
-        height: 48px !important;
-        padding: 0 10px !important;
-    }
-
-    .react-international-phone-input {
-        height: 48px !important;
-        font-size: 14px !important;
-    }
+.phone-wrapper .react-international-phone-input:-webkit-autofill,
+.phone-wrapper .react-international-phone-input:-webkit-autofill:hover,
+.phone-wrapper .react-international-phone-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 1000px #181818 inset !important;
+    transition: background-color 9999s ease-in-out 0s;
 }

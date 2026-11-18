@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import "./Header.css";
+
+import React, { useState, useEffect, useMemo } from "react";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
+import "./Header.css";
 
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [active, setActive] = useState("home");
     const { t, i18n } = useTranslation();
 
-    // NAV ITEMS (stable)
-    const navItems = React.useMemo(
+    const navItems = useMemo(
         () => [
             { id: "home", label: t("header.home") },
             { id: "about", label: t("header.about") },
@@ -19,21 +19,28 @@ export default function Header() {
         ],
         [t]
     );
-    const scrollToSection = (id) => {
-        const el = document.getElementById(id);
 
-        if (el) {
-            el.scrollIntoView({ behavior: "smooth" });
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
         }
 
+        setActive(id);
         setMenuOpen(false);
     };
 
-    // ACTIVE SECTION TRACKING
+    // Active section tracking
     useEffect(() => {
         const sections = navItems
             .map((item) => document.getElementById(item.id))
             .filter(Boolean);
+
+        if (!sections.length) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -45,71 +52,100 @@ export default function Header() {
             },
             {
                 root: null,
-                threshold: 0.55,
+                threshold: 0.4,
             }
         );
 
-        sections.forEach((sec) => observer.observe(sec));
+        sections.forEach((section) => observer.observe(section));
+
+        return () => observer.disconnect();
+    }, [navItems]);
+
+    // Close mobile menu with Escape
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setMenuOpen(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
 
         return () => {
-            sections.forEach((sec) => observer.unobserve(sec));
+            window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [navItems]);
+    }, []);
+
+    const changeLanguage = (event) => {
+        i18n.changeLanguage(event.target.value);
+    };
 
     return (
         <header className="header">
             <div className="header-container">
 
                 {/* LOGO */}
-                <div className="logo" onClick={() => scrollToSection("home")}>
-                    Adam.
-                </div>
+                <button
+                    className="logo"
+                    onClick={() => scrollToSection("home")}
+                    aria-label="Go to homepage"
+                >
+                    ADAM<span>.</span>
+                </button>
 
-                {/* NAV */}
+                {/* NAVIGATION */}
                 <nav className={`nav ${menuOpen ? "active" : ""}`}>
-                    <ul>
-                        {navItems.map((item) => (
+                    <ul className="nav-list">
+                        {navItems.map((item, index) => (
                             <li key={item.id}>
                                 <button
                                     onClick={() => scrollToSection(item.id)}
-                                    className={active === item.id ? "active-link" : ""}
+                                    className={`nav-link ${active === item.id ? "active-link" : ""
+                                        }`}
                                 >
+                                    <span className="nav-number">
+                                        0{index + 1}
+                                    </span>
                                     {item.label}
                                 </button>
                             </li>
                         ))}
                     </ul>
 
-                    {/* LANGUAGE SELECT */}
+                    {/* LANGUAGE SELECTOR */}
                     <div className="lang-item">
+                        <FiChevronDown className="lang-arrow" />
+
                         <select
-                            value={i18n.language}
-                            onChange={(e) => {
-                                i18n.changeLanguage(e.target.value);
-                            }}
+                            value={i18n.language?.split("-")[0] || "uz"}
+                            onChange={changeLanguage}
+                            aria-label="Select language"
                         >
-                            <option value="uz">🇺🇿 UZ</option>
-                            <option value="en">🇺🇸 EN</option>
-                            <option value="fr">🇫🇷 FR</option>
-                            <option value="ru">🇷🇺 RU</option>
+                            <option value="uz">UZ</option>
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                            <option value="ru">RU</option>
                         </select>
                     </div>
                 </nav>
 
-                {/* MENU ICON */}
-                <div
-                    className="menu-icon"
-                    onClick={() => setMenuOpen(!menuOpen)}
+                {/* MOBILE MENU BUTTON */}
+                <button
+                    className={`menu-icon ${menuOpen ? "menu-open" : ""}`}
+                    onClick={() => setMenuOpen((prev) => !prev)}
+                    aria-label={menuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={menuOpen}
                 >
                     {menuOpen ? <FiX /> : <FiMenu />}
-                </div>
-
+                </button>
             </div>
 
+            {/* MOBILE OVERLAY */}
             {menuOpen && (
                 <div
                     className="overlay"
                     onClick={() => setMenuOpen(false)}
+                    aria-hidden="true"
                 />
             )}
         </header>

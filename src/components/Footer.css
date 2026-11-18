@@ -1,140 +1,382 @@
+/* ========================================
+   FOOTER — BLACK / WHITE / GOLD
+======================================== */
+
 .footer {
     position: relative;
-
-    padding: 80px 20px 40px;
-
-    background: #070b14;
-
     overflow: hidden;
+    isolation: isolate;
+
+    width: 100%;
+    padding: 90px 25px 25px;
+
+    background: #080808;
+    color: #ffffff;
+
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-/* BACKGROUND GLOW */
-.footer-bg {
+/* Background glow */
+
+.footer-glow {
     position: absolute;
-    inset: 0;
+    top: -180px;
+    right: 5%;
 
-    background:
-        radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.12), transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.12), transparent 40%);
+    width: 450px;
+    height: 350px;
 
-    z-index: 0;
+    background: radial-gradient(circle,
+            rgba(212, 175, 55, 0.09),
+            transparent 70%);
+
+    filter: blur(45px);
+    pointer-events: none;
+    z-index: -1;
 }
 
-/* CONTAINER */
+/* ========================================
+   CONTAINER
+======================================== */
+
 .footer-container {
     position: relative;
-    z-index: 2;
-
-    max-width: 1100px;
-    margin: auto;
-
-    text-align: center;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
-/* TITLE */
-.footer-title {
-    font-size: 28px;
+/* ========================================
+   TOP SECTION
+======================================== */
 
-    font-weight: 800;
+.footer-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
 
-    color: #f8fafc;
-
-    margin-bottom: 10px;
+    padding-bottom: 65px;
 }
 
-/* SUB TEXT */
-.footer-sub {
-    color: #94a3b8;
+.footer-overline,
+.footer-message-label,
+.footer-section-label {
+    display: block;
 
+    color: #d4af37;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.footer-logo {
+    margin: 15px 0 10px;
+
+    color: #ffffff;
+    font-size: clamp(42px, 6vw, 65px);
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1;
+}
+
+.footer-logo span {
+    color: #d4af37;
+}
+
+.footer-description {
+    max-width: 400px;
+    margin: 0;
+
+    color: #999999;
     font-size: 14px;
-
-    margin-bottom: 25px;
+    line-height: 1.8;
 }
 
-/* SOCIALS */
+/* Quote */
+
+.footer-message {
+    max-width: 390px;
+    padding-bottom: 5px;
+}
+
+.footer-message p {
+    margin: 17px 0 0;
+
+    color: #a5a5a5;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.footer-message p span {
+    color: #ffffff;
+}
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            rgba(212, 175, 55, 0.4),
+            rgba(255, 255, 255, 0.08),
+            transparent);
+}
+
+/* ========================================
+   MIDDLE SECTION
+======================================== */
+
+.footer-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    padding: 42px 0;
+}
+
+.footer-social-info p {
+    margin: 10px 0 0;
+
+    color: #888888;
+    font-size: 13px;
+}
+
+/* ========================================
+   SOCIAL LINKS
+======================================== */
+
 .socials {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 12px;
-
-    margin-bottom: 25px;
 }
 
-.socials a {
-    width: 52px;
-    height: 52px;
+.social-link {
+    position: relative;
+
+    width: 46px;
+    height: 46px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 5px;
 
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.025);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d0d0d0;
+    font-size: 17px;
 
-    color: #f8fafc;
-
-    font-size: 22px;
-
-    transition: 0.3s;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.socials a:hover {
-    transform: translateY(-6px);
-
+.social-link:hover {
+    color: #d4af37;
     border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.07);
+}
+
+.social-arrow {
+    position: absolute;
+    top: 4px;
+    right: 4px;
 
     color: #d4af37;
+    font-size: 10px;
 
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+    opacity: 0;
+    transform: translate(-3px, 3px);
+    transition: all 0.3s ease;
 }
 
-/* LINE */
-.line {
-    width: 100%;
-    height: 1px;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    margin: 25px 0;
+.social-link:hover .social-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
-/* COPYRIGHT */
+/* ========================================
+   BOTTOM SECTION
+======================================== */
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 27px 0;
+}
+
 .copyright {
-    font-size: 13px;
+    margin: 0;
 
-    color: #64748b;
+    color: #777777;
+    font-size: 11px;
+    letter-spacing: 0.3px;
 }
 
-.copyright span {
+.copyright span:first-of-type {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.copyright-dot {
     color: #d4af37;
+}
+
+/* Back to top */
+
+.back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 0;
+
+    border: none;
+    background: transparent;
+
+    color: #aaaaaa;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.back-to-top svg {
+    color: #d4af37;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #ffffff;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   FOOTER INDEX
+======================================== */
+
+.footer-index {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-top: 17px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #555555;
+    font-size: 9px;
     font-weight: 600;
+    letter-spacing: 2px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-    .footer-title {
-        font-size: 22px;
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 70px 22px 22px;
     }
 
-    .socials a {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+
+        padding-bottom: 45px;
+    }
+
+    .footer-message {
+        max-width: 100%;
+    }
+
+    .footer-middle {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+
+        padding: 32px 0;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
     }
 }
 
-@media (max-width: 400px) {
-    .footer-title {
-        font-size: 18px;
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 60px 18px 20px;
     }
 
-    .socials a {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-        
+    .footer-logo {
+        font-size: 48px;
+    }
+
+    .footer-description {
+        font-size: 13px;
+    }
+
+    .footer-message p {
+        font-size: 15px;
+    }
+
+    .socials {
+        gap: 10px;
+    }
+
+    .social-link {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .copyright {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    .footer-index {
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer *,
+    .footer *::before,
+    .footer *::after {
+        transition-duration: 0.01ms !important;
     }
 }

@@ -1,10 +1,10 @@
+
 import React from "react";
 import "./Skills.css";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 export default function Skills() {
-
     const { t } = useTranslation();
 
     const skills = [
@@ -19,74 +19,60 @@ export default function Skills() {
 
     return (
         <section className="skills" id="skills">
-
-            <div className="skills-bg"></div>
-
             <div className="skills-container">
 
-                {/* TITLE */}
-                <motion.h2
-                    className="skills-title"
-                    initial={{ opacity: 0, y: 30 }}
+                <motion.div
+                    className="skills-heading"
+                    initial={{ opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true }}
                 >
-                    {t("skills.title")}
-                </motion.h2>
+                    <span className="skills-label">04 — EXPERTISE</span>
+                    <h2 className="skills-title">
+                        {t("skills.title")}<span>.</span>
+                    </h2>
+                </motion.div>
 
-                {/* GRID */}
                 <div className="skills-grid">
-
                     {skills.map((skill, index) => (
-
                         <motion.div
                             className="skill-card"
-                            key={index}
-
-                            initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-
+                            key={skill.name}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{
                                 duration: 0.5,
-                                delay: index * 0.08,
-                                ease: "easeOut"
+                                delay: index * 0.08
                             }}
-
                             viewport={{ once: true, amount: 0.2 }}
-
-                            whileHover={{
-                                scale: 1.06,
-                                y: -6
-                            }}
-
-                            whileTap={{ scale: 0.98 }}
                         >
-
                             <div className="skill-top">
-                                <span className="skill-name">{skill.name}</span>
-                                <span className="skill-value">{skill.value}%</span>
+                                <span className="skill-name">
+                                    {skill.name}
+                                </span>
+                                <span className="skill-value">
+                                    {skill.value}%
+                                </span>
                             </div>
 
                             <div className="skill-bar">
-
                                 <motion.div
                                     className="skill-fill"
                                     initial={{ width: 0 }}
-                                    whileInView={{ width: `${skill.value}%` }}
+                                    whileInView={{
+                                        width: `${skill.value}%`
+                                    }}
                                     transition={{
                                         duration: 1.2,
                                         ease: "easeOut",
-                                        delay: 0.2
+                                        delay: 0.2 + index * 0.08
                                     }}
+                                    viewport={{ once: true }}
                                 />
-
                             </div>
-
                         </motion.div>
-
                     ))}
-
                 </div>
 
             </div>
